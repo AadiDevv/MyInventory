@@ -1,0 +1,65 @@
+﻿@{
+	ViewData["Title"] = "Product adding";
+
+}
+
+
+<div class=" text-center">
+	<h1 class="display-4">Add a Product</h1>
+</div>
+
+<form id="addProduct"  method="post" class="container mt-4">
+
+	<div class="mb-3">
+		<label class="form-label">Name</label>
+		<input type="text"  class="form-control" name="name"/>
+	</div>
+
+	<div class="mb-3">
+		<label class="form-label">Quantity</label>
+		<input type="number" class="form-control" name="Quantity"  placeholder="0" step="1" />
+	</div>
+
+	<div class="mb-3">
+		<label class="form-label">Category</label>
+		<select id="category-select"  name="CategoryId"  class="form-select">
+			<option value="">-- Select option --</option>
+			<option value="add-new">+add-new</option>
+		</select>
+
+		<div id="newCategory_container" class="new_container mt-2" style="display: none;">
+			<label class="form-label">New</label>
+			<input type="text" class="newCategoryInput form-control" placeholder="New Category Name" />
+			<button id="NewModelCategory" class="NewCategory btn btn-primary mt-2" type="button">Add Category</button>
+		</div>
+	</div>
+
+	<div class="mb-3">
+		<label class="form-label">Supplier</label>
+		<select id="supplier-select"  name="SupplierId"  class="form-select">
+			<option value="">-- Select option --</option>
+			<option value="add-new">+add-new</option>
+		</select>
+
+		<div id="newSupplier_container" class="new_container mt-2" style="display: none;">
+			<label class="form-label">New Supplier</label>
+			<input type="text" class="newSupplierInput form-control" placeholder="New Supplier Name" />
+			<button id="NewModelSupplier" class="NewSupplier btn btn-primary mt-2" type="button">Add Supplier</button>
+		</div>
+	</div>
+
+
+	<div class="mb-3">
+		<label class="form-label">Description</label>
+		<input class="form-control" type="text"  name="Description" placeholder="This product is ..." />
+	</div>
+
+	<button type="submit" class="btn btn-success mt-3">Submit</button>
+</form>
+
+
+
+
+
+
+
