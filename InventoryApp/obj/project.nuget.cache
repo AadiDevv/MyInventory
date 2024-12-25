@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5kxhFRt4GpA=",
+  "dgSpecHash": "wV1djSLewgk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\InventoryApp\\InventoryApp\\InventoryApp.csproj",
+  "projectFilePath": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\InventoryApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\satya\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\satya\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

@@ -11,23 +11,16 @@ public partial class MyInventoryContext : DbContext
     }
 
     public MyInventoryContext(DbContextOptions<MyInventoryContext> options)
-        : base(options)
-    {
-    }
+             : base(options) { }
 
-    public virtual DbSet<Category> Categories { get; set; }
-
-    public virtual DbSet<Order> Orders { get; set; }
-
-    public virtual DbSet<OrderItem> OrderItems { get; set; }
-
-    public virtual DbSet<Product> Products { get; set; }
-
-    public virtual DbSet<Supplier> Suppliers { get; set; }
-
-    public virtual DbSet<Transaction> Transactions { get; set; }
-
-    public virtual DbSet<User> Users { get; set; }
+    // Définition des DbSets (tables)
+    public DbSet<User> Users { get; set; }
+    public DbSet<Category> Categories { get; set; }
+    public DbSet<Supplier> Suppliers { get; set; }
+    public DbSet<Product> Products { get; set; }
+    public DbSet<Order> Orders { get; set; }
+    public DbSet<OrderItem> OrderItems { get; set; }
+    public DbSet<Transaction> Transactions { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -35,174 +28,85 @@ public partial class MyInventoryContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Category>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK__categori__3213E83F1375FDFC");
+        // 🔑 Configuration de User-Category
+        modelBuilder.Entity<Category>()
+            .HasOne(c => c.User)
+            .WithMany(u => u.Categories)
+            .HasForeignKey(c => c.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
 
-            entity.ToTable("categories");
+        modelBuilder.Entity<Category>()
+            .Property(c => c.ProductCount)
+            .HasDefaultValue(0);
 
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.Description).HasColumnName("description");
-            entity.Property(e => e.Name)
-                .HasMaxLength(250)
-                .HasColumnName("name");
-            entity.Property(e => e.ParentCategoryId)
-                .HasDefaultValueSql("(NULL)")
-                .HasColumnName("parent_category_id");
+        // 🔑 Configuration de User-Supplier
+        modelBuilder.Entity<Supplier>()
+            .HasOne(s => s.User)
+            .WithMany(u => u.Suppliers)
+            .HasForeignKey(s => s.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
 
-            entity.HasOne(d => d.ParentCategory).WithMany(p => p.InverseParentCategory)
-                .HasForeignKey(d => d.ParentCategoryId)
-                .HasConstraintName("FK__categorie__paren__3C69FB99");
-        });
+        // 🔑 Configuration de User-Product
+        modelBuilder.Entity<Product>()
+            .HasOne(p => p.User)
+            .WithMany(u => u.Products)
+            .HasForeignKey(p => p.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
 
-        modelBuilder.Entity<Order>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK__orders__3213E83F3A3B8AC3");
+        modelBuilder.Entity<Product>()
+            .HasOne(p => p.Category)
+            .WithMany(c => c.Products)
+            .HasForeignKey(p => p.CategoryId)
+            .OnDelete(DeleteBehavior.SetNull);
 
-            entity.ToTable("orders");
+        modelBuilder.Entity<Product>()
+            .HasOne(p => p.Supplier)
+            .WithMany(s => s.Products)
+            .HasForeignKey(p => p.SupplierId)
+            .OnDelete(DeleteBehavior.SetNull);
 
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.OrderDate)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnName("order_date");
-            entity.Property(e => e.Status)
-                .HasMaxLength(20)
-                .HasDefaultValue("pending")
-                .HasColumnName("status");
-            entity.Property(e => e.SupplierId).HasColumnName("supplier_id");
-            entity.Property(e => e.TotalAmount)
-                .HasColumnType("decimal(10, 2)")
-                .HasColumnName("total_amount");
+        // 🔑 Configuration de User-Order
+        modelBuilder.Entity<Order>()
+    .HasOne(o => o.User)
+    .WithMany(u => u.Orders)
+    .HasForeignKey(o => o.UserId)
+    .OnDelete(DeleteBehavior.Restrict);
 
-            entity.HasOne(d => d.Supplier).WithMany(p => p.Orders)
-                .HasForeignKey(d => d.SupplierId)
-                .HasConstraintName("FK__orders__supplier__5070F446");
-        });
 
-        modelBuilder.Entity<OrderItem>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK__order_it__3213E83F75E7F68E");
+        modelBuilder.Entity<Order>()
+            .HasOne(o => o.Supplier)
+            .WithMany(s => s.Orders)
+            .HasForeignKey(o => o.SupplierId)
+            .OnDelete(DeleteBehavior.Restrict);
 
-            entity.ToTable("order_items");
 
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.OrderId).HasColumnName("order_id");
-            entity.Property(e => e.Price)
-                .HasColumnType("decimal(10, 2)")
-                .HasColumnName("price");
-            entity.Property(e => e.ProductId).HasColumnName("product_id");
-            entity.Property(e => e.Quantity).HasColumnName("quantity");
 
-            entity.HasOne(d => d.Order).WithMany(p => p.OrderItems)
-                .HasForeignKey(d => d.OrderId)
-                .HasConstraintName("FK__order_ite__order__534D60F1");
 
-            entity.HasOne(d => d.Product).WithMany(p => p.OrderItems)
-                .HasForeignKey(d => d.ProductId)
-                .HasConstraintName("FK__order_ite__produ__5441852A");
-        });
+        // 🔑 Configuration de Order-OrderItem
+        modelBuilder.Entity<OrderItem>()
+            .HasOne(oi => oi.Order)
+            .WithMany(o => o.OrderItems)
+            .HasForeignKey(oi => oi.OrderId)
+            .OnDelete(DeleteBehavior.Restrict);
 
-        modelBuilder.Entity<Product>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK__products__3213E83FE91D3419");
+        modelBuilder.Entity<OrderItem>()
+            .HasOne(oi => oi.Product)
+            .WithMany(p => p.OrderItems)
+            .HasForeignKey(oi => oi.ProductId)
+            .OnDelete(DeleteBehavior.Restrict);
 
-            entity.ToTable("products");
+        // 🔑 Configuration de User-Transaction
+        modelBuilder.Entity<Transaction>()
+            .HasOne(t => t.User)
+            .WithMany(u => u.Transactions)
+            .HasForeignKey(t => t.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
 
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.CategoryId).HasColumnName("category_id");
-            entity.Property(e => e.DateAdded)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnName("date_added");
-            entity.Property(e => e.Description).HasColumnName("description");
-            entity.Property(e => e.Name)
-                .HasMaxLength(50)
-                .HasColumnName("name");
-            entity.Property(e => e.Quantity).HasColumnName("quantity");
-            entity.Property(e => e.ReorderLevel)
-                .HasDefaultValue(0)
-                .HasColumnName("reorder_level");
-            entity.Property(e => e.Status)
-                .HasMaxLength(10)
-                .HasDefaultValue("active")
-                .HasColumnName("status");
-            entity.Property(e => e.SupplierId).HasColumnName("supplier_id");
-
-            entity.HasOne(d => d.Category).WithMany(p => p.Products)
-                .HasForeignKey(d => d.CategoryId)
-                .OnDelete(DeleteBehavior.SetNull)
-                .HasConstraintName("FK__products__catego__440B1D61");
-
-            entity.HasOne(d => d.Supplier).WithMany(p => p.Products)
-                .HasForeignKey(d => d.SupplierId)
-                .OnDelete(DeleteBehavior.SetNull)
-                .HasConstraintName("FK__products__suppli__44FF419A");
-        });
-
-        modelBuilder.Entity<Supplier>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK__supplier__3213E83F0ED00F86");
-
-            entity.ToTable("suppliers");
-
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.Address).HasColumnName("address");
-            entity.Property(e => e.ContactName)
-                .HasMaxLength(100)
-                .HasColumnName("contact_name");
-            entity.Property(e => e.Email)
-                .HasMaxLength(100)
-                .HasColumnName("email");
-            entity.Property(e => e.Name)
-                .HasMaxLength(100)
-                .HasColumnName("name");
-            entity.Property(e => e.Phone)
-                .HasMaxLength(15)
-                .HasColumnName("phone");
-        });
-
-        modelBuilder.Entity<Transaction>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK__transact__3213E83F24EA7679");
-
-            entity.ToTable("transactions");
-
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.NewQuantity).HasColumnName("new_quantity");
-            entity.Property(e => e.OldQuantity).HasColumnName("old_quantity");
-            entity.Property(e => e.ProductId).HasColumnName("product_id");
-            entity.Property(e => e.Quantity).HasColumnName("quantity");
-            entity.Property(e => e.Reason).HasColumnName("reason");
-            entity.Property(e => e.Timestamp)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnName("timestamp");
-            entity.Property(e => e.Type)
-                .HasMaxLength(10)
-                .HasColumnName("type");
-            entity.Property(e => e.UserId).HasColumnName("user_id");
-
-            entity.HasOne(d => d.Product).WithMany(p => p.Transactions)
-                .HasForeignKey(d => d.ProductId)
-                .HasConstraintName("FK__transacti__produ__49C3F6B7");
-
-            entity.HasOne(d => d.User).WithMany(p => p.Transactions)
-                .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__transacti__user___4AB81AF0");
-        });
-
-        modelBuilder.Entity<User>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK__users__3213E83F3EF812F3");
-
-            entity.ToTable("users");
-
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.Password)
-                .HasMaxLength(250)
-                .HasColumnName("password");
-            entity.Property(e => e.Username)
-                .HasMaxLength(50)
-                .HasColumnName("username");
-        });
+        modelBuilder.Entity<Transaction>()
+            .HasOne(t => t.Product)
+            .WithMany(p => p.Transactions)
+            .HasForeignKey(t => t.ProductId)
+            .OnDelete(DeleteBehavior.Cascade);
 
         OnModelCreatingPartial(modelBuilder);
     }

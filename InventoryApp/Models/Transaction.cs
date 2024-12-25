@@ -1,29 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace InventoryApp.Models;
-
-public partial class Transaction
+namespace InventoryApp.Models
 {
-    public int Id { get; set; }
+    public class Transaction
+    {
+        [Key]
+        public int Id { get; set; }
 
-    public int ProductId { get; set; }
+        public int Quantity { get; set; }
 
-    public int UserId { get; set; }
+        [MaxLength(10)]
+        public string Type { get; set; } // ex: "sale", "restock"
 
-    public int Quantity { get; set; }
+        public string Reason { get; set; }
 
-    public int? OldQuantity { get; set; }
+        public DateTime Timestamp { get; set; } = DateTime.Now;
 
-    public int? NewQuantity { get; set; }
+        [ForeignKey("Product")]
+        public int ProductId { get; set; }
+        public Product Product { get; set; }
 
-    public string Type { get; set; } = null!;
-
-    public string? Reason { get; set; }
-
-    public DateTime? Timestamp { get; set; }
-
-    public virtual Product Product { get; set; } = null!;
-
-    public virtual User User { get; set; } = null!;
+        [ForeignKey("User")]
+        public int UserId { get; set; }
+        public User User { get; set; }
+    }
 }

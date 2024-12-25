@@ -1,21 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace InventoryApp.Models;
-
-public partial class Order
+namespace InventoryApp.Models
 {
-    public int Id { get; set; }
+    public class Order
+    {
+        [Key]
+        public int Id { get; set; }
 
-    public int SupplierId { get; set; }
+        public DateTime OrderDate { get; set; } = DateTime.Now;
 
-    public DateTime? OrderDate { get; set; }
+        [MaxLength(20)]
+        public string Status { get; set; } = "pending";
 
-    public string? Status { get; set; }
+        [ForeignKey("Supplier")]
+        public int SupplierId { get; set; }
+        public Supplier Supplier { get; set; }
 
-    public decimal? TotalAmount { get; set; }
+        [ForeignKey("User")]
+        public int UserId { get; set; }
+        public User User { get; set; }
 
-    public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
-
-    public virtual Supplier Supplier { get; set; } = null!;
+        // Relations
+        public ICollection<OrderItem> OrderItems { get; set; }
+    }
 }

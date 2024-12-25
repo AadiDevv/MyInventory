@@ -1,33 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace InventoryApp.Models;
-
-public partial class Product
+namespace InventoryApp.Models
 {
-    public int Id { get; set; }
+    public class Product
+    {
+        [Key]
+        public int Id { get; set; }
 
-    public string Name { get; set; } = null!;
+        [Required]
+        [MaxLength(50)]
+        public string Name { get; set; }
 
-    public string? Description { get; set; }
+        public string Description { get; set; }
 
-    public int Quantity { get; set; }
+        public int Quantity { get; set; }
 
-    public int? CategoryId { get; set; }
+        public int? ReorderLevel { get; set; }
 
-    public int? SupplierId { get; set; }
+        [MaxLength(10)]
+        public string Status { get; set; } = "active";
 
-    public int? ReorderLevel { get; set; }
+        [ForeignKey("Category")]
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
 
-    public DateTime? DateAdded { get; set; }
+        [ForeignKey("Supplier")]
+        public int SupplierId { get; set; }
+        public Supplier Supplier { get; set; }
 
-    public string? Status { get; set; }
+        [ForeignKey("User")]
+        public int UserId { get; set; }
+        public User User { get; set; }
 
-    public virtual Category? Category { get; set; }
-
-    public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
-
-    public virtual Supplier? Supplier { get; set; }
-
-    public virtual ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
+        // Relations
+        public ICollection<OrderItem> OrderItems { get; set; }
+        public ICollection<Transaction> Transactions { get; set; }
+    }
 }

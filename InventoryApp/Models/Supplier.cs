@@ -1,23 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace InventoryApp.Models;
-
-public partial class Supplier
+namespace InventoryApp.Models
 {
-    public int Id { get; set; }
+    public class Supplier
+    {
+        [Key]
+        public int Id { get; set; }
 
-    public string Name { get; set; } = null!;
+        [Required]
+        [MaxLength(100)]
+        public string Name { get; set; }
 
-    public string? ContactName { get; set; }
+        [MaxLength(100)]
+        public string ContactName { get; set; }
 
-    public string? Phone { get; set; }
+        [MaxLength(100)]
+        public string Email { get; set; }
 
-    public string? Email { get; set; }
+        [MaxLength(15)]
+        public string Phone { get; set; }
 
-    public string? Address { get; set; }
+        public string Address { get; set; }
 
-    public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
+        [ForeignKey("User")]
+        public int UserId { get; set; }
+        public User User { get; set; }
 
-    public virtual ICollection<Product> Products { get; set; } = new List<Product>();
+        // Relations
+        public ICollection<Product> Products { get; set; }
+        public ICollection<Order> Orders { get; set; }
+    }
 }

@@ -95,27 +95,39 @@ namespace InventoryApp.Controllers_API
                     });
 
 
+                }else
+                {
+                    return Ok(new
+                    {
+                        success = true,
+                        message = "Product quantity updated.",
+                        data = existingProduct
+                    });
                 }
 
-                var product = new Product
-                {
-                    Name = request.NewProductName,
-                    Quantity = request.Quantity, // Ajoutez la quantité initiale
-                    CategoryId = request.CategoryId,
-                    SupplierId = request.SupplierId,
-                    Description = request.Description
+                //var product = new Product
+                //{
+                //    Name = request.NewProductName,
+                //    Quantity = request.Quantity, // Ajoutez la quantité initiale
+                //    CategoryId = request.CategoryId,
+                //    SupplierId = request.SupplierId,
+                //    Description = request.Description
 
-                };
+                //};
 
-                _context.Products.Add(product);
-                await _context.SaveChangesAsync();
+                //_context.Products.Add(product);
+                //await _context.SaveChangesAsync();
 
-                return CreatedAtAction("GetCategory", new { id = product.Id }, new
-                {
-                    success = true,
-                    message = "Product created successfully.",
-                    data = product
-                });
+                //var category = _context.Categories.FindAsync(product.CategoryId);
+                //category.ProductCount = await _context.Products.CountAsync(p => p.CategoryId == product.CategoryId);
+                //await _.SaveChangesAsync();
+
+                //return CreatedAtAction("GetCategory", new { id = product.Id }, new
+                //{
+                //    success = true,
+                //    message = "Product created successfully.",
+                //    data = product
+                //});
             }
             catch (Exception ex)
             {
