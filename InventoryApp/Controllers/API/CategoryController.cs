@@ -97,7 +97,7 @@ namespace InventoryApp.Controllers_API
 
                 return CreatedAtAction("GetCategory", new { id = category.Id }, category);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return StatusCode(500, new
                 {
@@ -106,7 +106,7 @@ namespace InventoryApp.Controllers_API
                     details = ex.Message
                 });
             }
-            
+
         }
 
         // DELETE: api/Category/5

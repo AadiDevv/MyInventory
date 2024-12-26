@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "34/JaQqFGfzTWCUqBZUqLkXrBK4EU74fBqlNxy4v0DQ=",
+  "Hash": "bjXAIsFpltApuhlQlrz4k6JHi7zSry2Ob5AsL35PBWY=",
   "Source": "InventoryApp",
   "BasePath": "_content/InventoryApp",
   "Mode": "Default",
@@ -1633,7 +1633,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 25 Dec 2024 09:23:49 GMT"
+          "Value": "Thu, 26 Dec 2024 08:17:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1678,7 +1678,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 25 Dec 2024 09:23:49 GMT"
+          "Value": "Thu, 26 Dec 2024 08:17:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1723,7 +1723,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 25 Dec 2024 09:23:49 GMT"
+          "Value": "Thu, 26 Dec 2024 08:17:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1760,7 +1760,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 25 Dec 2024 09:23:49 GMT"
+          "Value": "Thu, 26 Dec 2024 08:17:38 GMT"
         },
         {
           "Name": "Cache-Control",

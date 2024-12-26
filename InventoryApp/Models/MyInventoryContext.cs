@@ -11,102 +11,156 @@ public partial class MyInventoryContext : DbContext
     }
 
     public MyInventoryContext(DbContextOptions<MyInventoryContext> options)
-             : base(options) { }
+        : base(options)
+    {
+    }
 
-    // Définition des DbSets (tables)
-    public DbSet<User> Users { get; set; }
-    public DbSet<Category> Categories { get; set; }
-    public DbSet<Supplier> Suppliers { get; set; }
-    public DbSet<Product> Products { get; set; }
-    public DbSet<Order> Orders { get; set; }
-    public DbSet<OrderItem> OrderItems { get; set; }
-    public DbSet<Transaction> Transactions { get; set; }
+    public virtual DbSet<Category> Categories { get; set; }
+
+    public virtual DbSet<Product> Products { get; set; }
+
+    public virtual DbSet<StockEntry> StockEntries { get; set; }
+
+    public virtual DbSet<StockEntryItem> StockEntryItems { get; set; }
+
+    public virtual DbSet<StockOut> StockOuts { get; set; }
+
+    public virtual DbSet<StockOutItem> StockOutItems { get; set; }
+
+    public virtual DbSet<Supplier> Suppliers { get; set; }
+
+    public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=PCAADI;Database=my_inventory;Trusted_Connection=True;TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("Server=PCAADI;Database=MyInventory;Trusted_Connection=True;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // 🔑 Configuration de User-Category
-        modelBuilder.Entity<Category>()
-            .HasOne(c => c.User)
-            .WithMany(u => u.Categories)
-            .HasForeignKey(c => c.UserId)
-            .OnDelete(DeleteBehavior.Cascade);
+        modelBuilder.Entity<Category>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Categori__3214EC07962434F4");
 
-        modelBuilder.Entity<Category>()
-            .Property(c => c.ProductCount)
-            .HasDefaultValue(0);
+            entity.Property(e => e.Name).HasMaxLength(250);
+            entity.Property(e => e.ProductCount).HasDefaultValue(0);
 
-        // 🔑 Configuration de User-Supplier
-        modelBuilder.Entity<Supplier>()
-            .HasOne(s => s.User)
-            .WithMany(u => u.Suppliers)
-            .HasForeignKey(s => s.UserId)
-            .OnDelete(DeleteBehavior.Cascade);
+            entity.HasOne(d => d.User).WithMany(p => p.Categories)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("FK__Categorie__UserI__3A81B327");
+        });
 
-        // 🔑 Configuration de User-Product
-        modelBuilder.Entity<Product>()
-            .HasOne(p => p.User)
-            .WithMany(u => u.Products)
-            .HasForeignKey(p => p.UserId)
-            .OnDelete(DeleteBehavior.Cascade);
+        modelBuilder.Entity<Product>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Products__3214EC07F6A6E60B");
 
-        modelBuilder.Entity<Product>()
-            .HasOne(p => p.Category)
-            .WithMany(c => c.Products)
-            .HasForeignKey(p => p.CategoryId)
-            .OnDelete(DeleteBehavior.SetNull);
+            entity.Property(e => e.Name).HasMaxLength(50);
+            entity.Property(e => e.Status)
+                .HasMaxLength(10)
+                .HasDefaultValue("active");
 
-        modelBuilder.Entity<Product>()
-            .HasOne(p => p.Supplier)
-            .WithMany(s => s.Products)
-            .HasForeignKey(p => p.SupplierId)
-            .OnDelete(DeleteBehavior.SetNull);
+            entity.HasOne(d => d.Category).WithMany(p => p.Products)
+                .HasForeignKey(d => d.CategoryId)
+                .HasConstraintName("FK__Products__Catego__412EB0B6");
 
-        // 🔑 Configuration de User-Order
-        modelBuilder.Entity<Order>()
-    .HasOne(o => o.User)
-    .WithMany(u => u.Orders)
-    .HasForeignKey(o => o.UserId)
-    .OnDelete(DeleteBehavior.Restrict);
+            entity.HasOne(d => d.Supplier).WithMany(p => p.Products)
+                .HasForeignKey(d => d.SupplierId)
+                .HasConstraintName("FK__Products__Suppli__4222D4EF");
 
+            entity.HasOne(d => d.User).WithMany(p => p.Products)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("FK__Products__UserId__4316F928");
+        });
 
-        modelBuilder.Entity<Order>()
-            .HasOne(o => o.Supplier)
-            .WithMany(s => s.Orders)
-            .HasForeignKey(o => o.SupplierId)
-            .OnDelete(DeleteBehavior.Restrict);
+        modelBuilder.Entity<StockEntry>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__StockEnt__3214EC07322A570C");
 
+            entity.ToTable("StockEntry");
 
+            entity.Property(e => e.EntryDate).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.Status)
+                .HasMaxLength(20)
+                .HasDefaultValue("pending");
 
+            entity.HasOne(d => d.Supplier).WithMany(p => p.StockEntries)
+                .HasForeignKey(d => d.SupplierId)
+                .HasConstraintName("FK__StockEntr__Suppl__47DBAE45");
 
-        // 🔑 Configuration de Order-OrderItem
-        modelBuilder.Entity<OrderItem>()
-            .HasOne(oi => oi.Order)
-            .WithMany(o => o.OrderItems)
-            .HasForeignKey(oi => oi.OrderId)
-            .OnDelete(DeleteBehavior.Restrict);
+            entity.HasOne(d => d.User).WithMany(p => p.StockEntries)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("FK__StockEntr__UserI__48CFD27E");
+        });
 
-        modelBuilder.Entity<OrderItem>()
-            .HasOne(oi => oi.Product)
-            .WithMany(p => p.OrderItems)
-            .HasForeignKey(oi => oi.ProductId)
-            .OnDelete(DeleteBehavior.Restrict);
+        modelBuilder.Entity<StockEntryItem>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__StockEnt__3214EC0726699BD7");
 
-        // 🔑 Configuration de User-Transaction
-        modelBuilder.Entity<Transaction>()
-            .HasOne(t => t.User)
-            .WithMany(u => u.Transactions)
-            .HasForeignKey(t => t.UserId)
-            .OnDelete(DeleteBehavior.Cascade);
+            entity.ToTable("StockEntryItem");
 
-        modelBuilder.Entity<Transaction>()
-            .HasOne(t => t.Product)
-            .WithMany(p => p.Transactions)
-            .HasForeignKey(t => t.ProductId)
-            .OnDelete(DeleteBehavior.Cascade);
+            entity.Property(e => e.Price).HasColumnType("decimal(10, 2)");
+
+            entity.HasOne(d => d.Product).WithMany(p => p.StockEntryItems)
+                .HasForeignKey(d => d.ProductId)
+                .HasConstraintName("FK__StockEntr__Produ__4CA06362");
+
+            entity.HasOne(d => d.StockEntry).WithMany(p => p.StockEntryItems)
+                .HasForeignKey(d => d.StockEntryId)
+                .HasConstraintName("FK__StockEntr__Stock__4BAC3F29");
+        });
+
+        modelBuilder.Entity<StockOut>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__StockOut__3214EC0769F7A742");
+
+            entity.ToTable("StockOut");
+
+            entity.Property(e => e.Timestamp).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.Type).HasMaxLength(10);
+
+            entity.HasOne(d => d.User).WithMany(p => p.StockOuts)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("FK__StockOut__UserId__5070F446");
+        });
+
+        modelBuilder.Entity<StockOutItem>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__StockOut__3214EC0760B6D512");
+
+            entity.ToTable("StockOutItem");
+
+            entity.Property(e => e.Price).HasColumnType("decimal(10, 2)");
+
+            entity.HasOne(d => d.Product).WithMany(p => p.StockOutItems)
+                .HasForeignKey(d => d.ProductId)
+                .HasConstraintName("FK__StockOutI__Produ__5441852A");
+
+            entity.HasOne(d => d.StockOut).WithMany(p => p.StockOutItems)
+                .HasForeignKey(d => d.StockOutId)
+                .HasConstraintName("FK__StockOutI__Stock__534D60F1");
+        });
+
+        modelBuilder.Entity<Supplier>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Supplier__3214EC077F92AD6E");
+
+            entity.Property(e => e.ContactName).HasMaxLength(100);
+            entity.Property(e => e.Email).HasMaxLength(100);
+            entity.Property(e => e.Name).HasMaxLength(250);
+            entity.Property(e => e.Phone).HasMaxLength(15);
+
+            entity.HasOne(d => d.User).WithMany(p => p.Suppliers)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("FK__Suppliers__UserI__3D5E1FD2");
+        });
+
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC077D9049D5");
+
+            entity.Property(e => e.Email).HasMaxLength(100);
+            entity.Property(e => e.Password).HasMaxLength(250);
+            entity.Property(e => e.Username).HasMaxLength(250);
+        });
 
         OnModelCreatingPartial(modelBuilder);
     }

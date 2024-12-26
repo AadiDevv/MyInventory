@@ -72,7 +72,6 @@ namespace InventoryApp.Controllers_API
 
             return NoContent();
         }
-
         // POST: api/Supplier
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
@@ -117,6 +116,7 @@ namespace InventoryApp.Controllers_API
                 });
             }
         }
+
 
         // DELETE: api/Supplier/5
         [HttpDelete("{id}")]

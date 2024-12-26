@@ -1,30 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace InventoryApp.Models;
 
-public class User
+public partial class User
 {
-    [Key]
     public int Id { get; set; }
 
-    [Required]
-    [MaxLength(50)]
-    public string Username { get; set; }
+    public string Username { get; set; } = null!;
 
-    [Required]
-    [MaxLength(250)]
-    public string Password { get; set; }
+    public string Password { get; set; } = null!;
 
-    [MaxLength(100)]
-    public string Email { get; set; }
+    public string? Email { get; set; }
 
-    // Relations
-    public ICollection<Category> Categories { get; set; }
-    public ICollection<Supplier> Suppliers { get; set; }
-    public ICollection<Product> Products { get; set; }
-    public ICollection<Order> Orders { get; set; }
-    public ICollection<Transaction> Transactions { get; set; }
+    public virtual ICollection<Category> Categories { get; set; } = new List<Category>();
+
+    public virtual ICollection<Product> Products { get; set; } = new List<Product>();
+
+    public virtual ICollection<StockEntry> StockEntries { get; set; } = new List<StockEntry>();
+
+    public virtual ICollection<StockOut> StockOuts { get; set; } = new List<StockOut>();
+
+    public virtual ICollection<Supplier> Suppliers { get; set; } = new List<Supplier>();
 }
-

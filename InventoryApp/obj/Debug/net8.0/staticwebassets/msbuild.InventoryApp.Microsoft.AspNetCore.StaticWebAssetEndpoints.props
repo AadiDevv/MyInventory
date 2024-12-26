@@ -28,13 +28,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\InventoryApp.6m2u35f6mv.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"6m2u35f6mv"},{"Name":"integrity","Value":"sha256-QhB/sOUsNxWzMRtw5beRX7OSy3st2bnoZRyt2i0iLNI="},{"Name":"label","Value":"_content/InventoryApp/InventoryApp.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1130"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022QhB/sOUsNxWzMRtw5beRX7OSy3st2bnoZRyt2i0iLNI=\u0022"},{"Name":"Last-Modified","Value":"Wed, 25 Dec 2024 09:23:49 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1130"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022QhB/sOUsNxWzMRtw5beRX7OSy3st2bnoZRyt2i0iLNI=\u0022"},{"Name":"Last-Modified","Value":"Thu, 26 Dec 2024 08:17:38 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/InventoryApp/InventoryApp.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\InventoryApp.6m2u35f6mv.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-QhB/sOUsNxWzMRtw5beRX7OSy3st2bnoZRyt2i0iLNI="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1130"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022QhB/sOUsNxWzMRtw5beRX7OSy3st2bnoZRyt2i0iLNI=\u0022"},{"Name":"Last-Modified","Value":"Wed, 25 Dec 2024 09:23:49 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1130"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022QhB/sOUsNxWzMRtw5beRX7OSy3st2bnoZRyt2i0iLNI=\u0022"},{"Name":"Last-Modified","Value":"Thu, 26 Dec 2024 08:17:38 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/InventoryApp/js/shared/api/GET_getItems.cmxenc9urv.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\shared\api\GET_getItems.js'))</AssetFile>

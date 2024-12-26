@@ -1,26 +1,21 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
 
-namespace InventoryApp.Models
+namespace InventoryApp.Models;
+
+public partial class Category
 {
-    public class Category
-    {
-        [Key]
-        public int Id { get; set; }
+    public int Id { get; set; }
 
-        [Required]
-        [MaxLength(250)]
-        public string Name { get; set; }
+    public string Name { get; set; } = null!;
 
-        public string Description { get; set; }
+    public string? Description { get; set; }
 
-        public int ProductCount { get; set; } = 0;
+    public int? ProductCount { get; set; }
 
-        [ForeignKey("User")]
-        public int UserId { get; set; }
-        public User User { get; set; }
+    public int? UserId { get; set; }
 
-        // Relations
-        public ICollection<Product> Products { get; set; }
-    }
+    public virtual ICollection<Product> Products { get; set; } = new List<Product>();
+
+    public virtual User? User { get; set; }
 }

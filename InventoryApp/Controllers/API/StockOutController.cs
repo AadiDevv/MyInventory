@@ -11,47 +11,47 @@ namespace InventoryApp.Controllers_API
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class OrderController : ControllerBase
+    public class StockOutController : ControllerBase
     {
         private readonly MyInventoryContext _context;
 
-        public OrderController(MyInventoryContext context)
+        public StockOutController(MyInventoryContext context)
         {
             _context = context;
         }
 
-        // GET: api/Order
+        // GET: api/StockOut
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
+        public async Task<ActionResult<IEnumerable<StockOut>>> GetStockOuts()
         {
-            return await _context.Orders.ToListAsync();
+            return await _context.StockOuts.ToListAsync();
         }
 
-        // GET: api/Order/5
+        // GET: api/StockOut/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Order>> GetOrder(int id)
+        public async Task<ActionResult<StockOut>> GetStockOut(int id)
         {
-            var order = await _context.Orders.FindAsync(id);
+            var stockOut = await _context.StockOuts.FindAsync(id);
 
-            if (order == null)
+            if (stockOut == null)
             {
                 return NotFound();
             }
 
-            return order;
+            return stockOut;
         }
 
-        // PUT: api/Order/5
+        // PUT: api/StockOut/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutOrder(int id, Order order)
+        public async Task<IActionResult> PutStockOut(int id, StockOut stockOut)
         {
-            if (id != order.Id)
+            if (id != stockOut.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(order).State = EntityState.Modified;
+            _context.Entry(stockOut).State = EntityState.Modified;
 
             try
             {
@@ -59,7 +59,7 @@ namespace InventoryApp.Controllers_API
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!OrderExists(id))
+                if (!StockOutExists(id))
                 {
                     return NotFound();
                 }
@@ -72,36 +72,36 @@ namespace InventoryApp.Controllers_API
             return NoContent();
         }
 
-        // POST: api/Order
+        // POST: api/StockOut
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Order>> PostOrder(Order order)
+        public async Task<ActionResult<StockOut>> PostStockOut(StockOut stockOut)
         {
-            _context.Orders.Add(order);
+            _context.StockOuts.Add(stockOut);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetOrder", new { id = order.Id }, order);
+            return CreatedAtAction("GetStockOut", new { id = stockOut.Id }, stockOut);
         }
 
-        // DELETE: api/Order/5
+        // DELETE: api/StockOut/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteOrder(int id)
+        public async Task<IActionResult> DeleteStockOut(int id)
         {
-            var order = await _context.Orders.FindAsync(id);
-            if (order == null)
+            var stockOut = await _context.StockOuts.FindAsync(id);
+            if (stockOut == null)
             {
                 return NotFound();
             }
 
-            _context.Orders.Remove(order);
+            _context.StockOuts.Remove(stockOut);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool OrderExists(int id)
+        private bool StockOutExists(int id)
         {
-            return _context.Orders.Any(e => e.Id == id);
+            return _context.StockOuts.Any(e => e.Id == id);
         }
     }
 }
