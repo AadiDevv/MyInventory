@@ -1,65 +1,84 @@
 ﻿@{
+	// Définit le titre de la page pour le rendu dans la vue Razor
 	ViewData["Title"] = "Product adding";
-
 }
 
-
-<div class=" text-center">
+<!-- En-tête de la page avec un titre centré -->
+<div class="text-center">
 	<h1 class="display-4">Add a Product</h1>
 </div>
 
-<form id="addProduct"  method="post" class="container mt-4">
+<!-- Formulaire pour ajouter un produit -->
+<form id="addProduct" method="post" class="container mt-4">
 
+	<!-- Champ pour le nom du produit -->
 	<div class="mb-3">
 		<label class="form-label">Name</label>
-		<input type="text"  class="form-control" name="name"/>
+		<input type="text" class="form-control" name="name" />
 	</div>
 
+	<!-- Champ pour la quantité du produit -->
 	<div class="mb-3">
 		<label class="form-label">Quantity</label>
-		<input type="number" class="form-control" name="Quantity"  placeholder="0" step="1" />
+		<input type="number" class="form-control" name="Quantity" placeholder="0" step="1" />
 	</div>
 
+	<!-- Sélecteur pour choisir une PRODUCTTYPE ou en ajouter une nouvelle -->
 	<div class="mb-3">
-		<label class="form-label">Category</label>
-		<select id="category-select"  name="CategoryId"  class="form-select">
+		<label class="form-label">Product Type</label>
+		<select id="ProductType-select" name="ProductTypeId" class="form-select">
 			<option value="">-- Select option --</option>
 			<option value="add-new">+add-new</option>
 		</select>
 
-		<div id="newCategory_container" class="new_container mt-2" style="display: none;">
+		<div id="newProductType_container" class="new_container mt-2" style="display: none;">
 			<label class="form-label">New</label>
-			<input type="text" class="newCategoryInput form-control" placeholder="New Category Name" />
-			<button id="NewModelCategory" class="NewCategory btn btn-primary mt-2" type="button">Add Category</button>
+			<input type="text" class="newProductTypeInput form-control" placeholder="New Product-Type" />
+			<button id="NewModelProductType" class="NewProductType btn btn-primary mt-2" type="button">Add Product-Type</button>
 		</div>
 	</div>
+	<section id="newSection" style="display:none;">
+		<!-- Sélecteur pour choisir une CATEGORIE ou en ajouter une nouvelle -->
 
-	<div class="mb-3">
-		<label class="form-label">Supplier</label>
-		<select id="supplier-select"  name="SupplierId"  class="form-select">
-			<option value="">-- Select option --</option>
-			<option value="add-new">+add-new</option>
-		</select>
+		<div class="mb-3">
+			<label class="form-label">Category</label>
+			<select id="Category-select" name="CategoryId" class="form-select">
+				<option value="">-- Select option --</option>
+				<option value="add-new">+add-new</option>
+			</select>
 
-		<div id="newSupplier_container" class="new_container mt-2" style="display: none;">
-			<label class="form-label">New Supplier</label>
-			<input type="text" class="newSupplierInput form-control" placeholder="New Supplier Name" />
-			<button id="NewModelSupplier" class="NewSupplier btn btn-primary mt-2" type="button">Add Supplier</button>
+			<div id="newCategory_container" class="new_container mt-2" style="display: none;">
+				<label class="form-label">New</label>
+				<input type="text" class="newCategoryInput form-control" placeholder="New Category Name" />
+				<button id="NewModelCategory" class="NewCategory btn btn-primary mt-2" type="button">Add Category</button>
+			</div>
 		</div>
-	</div>
 
+		<!-- Sélecteur pour choisir un FOURNISSEUR ou en ajouter un nouveau -->
+		<div class="mb-3">
+			<label class="form-label">Supplier</label>
+			<select id="Supplier-select" name="SupplierId" class="form-select">
+				<option value="">-- Select option --</option>
+				<option value="add-new">+add-new</option>
+			</select>
 
+			<div id="newSupplier_container" class="new_container mt-2" style="display: none;">
+				<label class="form-label">New Supplier</label>
+				<input type="text" class="newSupplierInput form-control" placeholder="New Supplier Name" />
+				<button id="NewModelSupplier" class="NewSupplier btn btn-primary mt-2" type="button">Add Supplier</button>
+			</div>
+		</div>
+	</section>
+	
+
+	<!-- Champ pour une description du produit -->
 	<div class="mb-3">
 		<label class="form-label">Description</label>
-		<input class="form-control" type="text"  name="Description" placeholder="This product is ..." />
+		<input class="form-control" type="text" name="Description" placeholder="This product is ..." />
 	</div>
 
+	<!-- Bouton pour soumettre le formulaire -->
 	<button type="submit" class="btn btn-success mt-3">Submit</button>
 </form>
-
-
-
-
-
 
 

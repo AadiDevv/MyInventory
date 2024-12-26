@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const controllers = ['Supplier', 'Category'];
     for (const controller of controllers) {
-        await updateDropdown(`${controller.toLowerCase()}-select`, controller);
+        if (document.getElementById(`${controller}-select`)){
+            await updateDropdown(`${controller}-select`, controller);
+        }
     }
 
     submitForm('addProduct', '/API/Product',

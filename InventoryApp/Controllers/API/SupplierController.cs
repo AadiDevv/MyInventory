@@ -42,6 +42,18 @@ namespace InventoryApp.Controllers_API
             return supplier;
         }
 
+        // GET: api/Category?Query
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Supplier>>> GetSupplierById([FromQuery] int ProductTypeId)
+        {
+            var suppliers = await _context.Suppliers
+                .Where(s => s.ProductTypeId == ProductTypeId)
+                .ToListAsync();
+
+            return Ok(suppliers);
+        }
+
+
         // PUT: api/Supplier/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]

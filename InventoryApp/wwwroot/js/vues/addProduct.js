@@ -11,9 +11,9 @@ export async function handleAddProduct() {
 
         const modelName = button.id.replace('NewModel', '');
         const input = document.querySelector(`.new${modelName}Input`);
-        const selectId = `${modelName.toLowerCase()}-select`
+        const selectId = `${modelName}-select`
 
-        handleDropdown(`${modelName.toLowerCase()}-select`, `new${modelName}_container`);
+        handleDropdown(selectId, `new${modelName}_container`);
 
 
         button.addEventListener('click', async () => {

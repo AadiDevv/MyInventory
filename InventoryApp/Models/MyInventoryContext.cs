@@ -181,6 +181,10 @@ public partial class MyInventoryContext : DbContext
             entity.Property(e => e.Name).HasMaxLength(250);
             entity.Property(e => e.Phone).HasMaxLength(15);
 
+            entity.HasOne(d => d.ProductType).WithMany(p => p.Suppliers)
+                .HasForeignKey(d => d.ProductTypeId)
+                .HasConstraintName("FK_Supplier_ProductType");
+
             entity.HasOne(d => d.User).WithMany(p => p.Suppliers)
                 .HasForeignKey(d => d.UserId)
                 .HasConstraintName("FK__Suppliers__UserI__3D5E1FD2");

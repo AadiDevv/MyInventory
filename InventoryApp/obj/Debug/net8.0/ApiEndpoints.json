@@ -218,6 +218,115 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "InventoryApp.Controllers_API.ProductTypeController",
+    "Method": "GetProductTypes",
+    "RelativePath": "api/ProductType",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[InventoryApp.Models.ProductType, InventoryApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "InventoryApp.Controllers_API.ProductTypeController",
+    "Method": "PostProductType",
+    "RelativePath": "api/ProductType",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productType",
+        "Type": "InventoryApp.Models.ProductType",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "InventoryApp.Models.ProductType",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "InventoryApp.Controllers_API.ProductTypeController",
+    "Method": "GetProductType",
+    "RelativePath": "api/ProductType/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "InventoryApp.Models.ProductType",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "InventoryApp.Controllers_API.ProductTypeController",
+    "Method": "PutProductType",
+    "RelativePath": "api/ProductType/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "productType",
+        "Type": "InventoryApp.Models.ProductType",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InventoryApp.Controllers_API.ProductTypeController",
+    "Method": "DeleteProductType",
+    "RelativePath": "api/ProductType/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "InventoryApp.Controllers_API.StockEntryController",
     "Method": "GetStockEntries",
     "RelativePath": "api/StockEntry",

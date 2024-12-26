@@ -41,6 +41,17 @@ namespace InventoryApp.Controllers_API
 
             return category;
         }
+        // GET: api/Category?Query
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Category>>> GetCategoriesById([FromQuery] int ProductTypeId)
+        {
+            var categories = await _context.Categories
+                .Where(c => c.ProductTypeId == ProductTypeId)
+                .ToListAsync();
+
+            return Ok(categories);
+        }
+
 
         // PUT: api/Category/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

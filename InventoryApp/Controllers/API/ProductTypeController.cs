@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using InventoryApp.Models;
+using InventoryApp.Models.DTOs;
+using Azure.Core;
 
 namespace InventoryApp.Controllers_API
 {
@@ -75,12 +77,46 @@ namespace InventoryApp.Controllers_API
         // POST: api/ProductType
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<ProductType>> PostProductType(ProductType productType)
+        public async Task<ActionResult<ProductType>> PostProductType(PostProductTypeRequest request)
         {
-            _context.ProductTypes.Add(productType);
-            await _context.SaveChangesAsync();
+            try
+            {
+                // Check if supplier with same name exists
+                var existingPdtType = await _context.ProductTypes.FirstOrDefaultAsync(c => c.Name.ToLower() == request.Name.ToLower());
 
-            return CreatedAtAction("GetProductType", new { id = productType.Id }, productType);
+
+                if (existingPdtType != null)
+                {
+                    return BadRequest(new
+                    {
+                        success = false,
+                        message = "ProductType already exists."
+                    });
+                }
+
+                // Add supplier to database
+                var productType = new ProductType { Name = request.Name };
+                _context.ProductTypes.Add(productType);
+                await _context.SaveChangesAsync();
+
+                return Ok(new
+                {
+                    success = true,
+                    id = productType.Id,
+                    name = productType.Name,
+                    message = productType.Name + " added with succes."
+
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    success = false,
+                    message = "An error occurred.",
+                    details = ex.Message
+                });
+            }
         }
 
         // DELETE: api/ProductType/5

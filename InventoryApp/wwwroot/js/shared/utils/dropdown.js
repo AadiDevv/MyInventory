@@ -30,6 +30,7 @@ export async function updateDropdown(selectId, modelName, newValue ) {
 
 }
 
+// Handle The input display -> Block or None
 export function handleDropdown(selectId, formContainerId, addOptionValue = 'add-new') {
     const dropDown = document.getElementById(selectId);
 

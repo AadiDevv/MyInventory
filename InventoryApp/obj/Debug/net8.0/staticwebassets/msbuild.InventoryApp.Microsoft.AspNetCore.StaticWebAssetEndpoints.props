@@ -84,17 +84,17 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"tn8omdm5pi"},{"Name":"integrity","Value":"sha256-J/S8vfKVShTJVJWSeXVFcaTkD0yrsgiHukVss8uYy5E="},{"Name":"label","Value":"_content/InventoryApp/js/shared/utils/alert.js"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"245"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022J/S8vfKVShTJVJWSeXVFcaTkD0yrsgiHukVss8uYy5E=\u0022"},{"Name":"Last-Modified","Value":"Sun, 22 Dec 2024 08:31:48 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/InventoryApp/js/shared/utils/dropdown.26gzsjafko.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\shared\utils\dropdown.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"26gzsjafko"},{"Name":"integrity","Value":"sha256-mmSxt0LXSZQaohwsMX0SI3CtuUNcK9C5kWnu06OtX98="},{"Name":"label","Value":"_content/InventoryApp/js/shared/utils/dropdown.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1782"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022mmSxt0LXSZQaohwsMX0SI3CtuUNcK9C5kWnu06OtX98=\u0022"},{"Name":"Last-Modified","Value":"Thu, 26 Dec 2024 15:26:59 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/InventoryApp/js/shared/utils/dropdown.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\shared\utils\dropdown.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-uwuQ/CdOHxocjl/tegqKz/go93/1aAXYr1cZpiZ7NgM="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1736"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022uwuQ/CdOHxocjl/tegqKz/go93/1aAXYr1cZpiZ7NgM=\u0022"},{"Name":"Last-Modified","Value":"Sun, 22 Dec 2024 09:41:11 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/InventoryApp/js/shared/utils/dropdown.vv87f1pprq.js">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\shared\utils\dropdown.js'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"vv87f1pprq"},{"Name":"integrity","Value":"sha256-uwuQ/CdOHxocjl/tegqKz/go93/1aAXYr1cZpiZ7NgM="},{"Name":"label","Value":"_content/InventoryApp/js/shared/utils/dropdown.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1736"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022uwuQ/CdOHxocjl/tegqKz/go93/1aAXYr1cZpiZ7NgM=\u0022"},{"Name":"Last-Modified","Value":"Sun, 22 Dec 2024 09:41:11 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-mmSxt0LXSZQaohwsMX0SI3CtuUNcK9C5kWnu06OtX98="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1782"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022mmSxt0LXSZQaohwsMX0SI3CtuUNcK9C5kWnu06OtX98=\u0022"},{"Name":"Last-Modified","Value":"Thu, 26 Dec 2024 15:26:59 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/InventoryApp/js/site.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>
@@ -108,17 +108,17 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"n7nlo6b7i7"},{"Name":"integrity","Value":"sha256-PTfyVXomN/D3D0qj8GnuyVZ6vJPVYAuL1A9ZT4xrIQc="},{"Name":"label","Value":"_content/InventoryApp/js/site.js"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"776"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022PTfyVXomN/D3D0qj8GnuyVZ6vJPVYAuL1A9ZT4xrIQc=\u0022"},{"Name":"Last-Modified","Value":"Mon, 23 Dec 2024 14:30:31 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/InventoryApp/js/vues/addProduct.2ygzk990ns.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\vues\addProduct.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"2ygzk990ns"},{"Name":"integrity","Value":"sha256-dte3JN5fjfzwIV5FeAe0DldYqEWf/eoXpO19vTem1Zk="},{"Name":"label","Value":"_content/InventoryApp/js/vues/addProduct.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1507"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022dte3JN5fjfzwIV5FeAe0DldYqEWf/eoXpO19vTem1Zk=\u0022"},{"Name":"Last-Modified","Value":"Thu, 26 Dec 2024 15:26:59 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/InventoryApp/js/vues/addProduct.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\vues\addProduct.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-EqPDoiKJvTDMarCawOSE/vSOnOOdAEJmzzqX\u002BaRH9fg="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1548"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022EqPDoiKJvTDMarCawOSE/vSOnOOdAEJmzzqX\u002BaRH9fg=\u0022"},{"Name":"Last-Modified","Value":"Sun, 22 Dec 2024 10:23:24 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/InventoryApp/js/vues/addProduct.ug12dn00tn.js">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\vues\addProduct.js'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ug12dn00tn"},{"Name":"integrity","Value":"sha256-EqPDoiKJvTDMarCawOSE/vSOnOOdAEJmzzqX\u002BaRH9fg="},{"Name":"label","Value":"_content/InventoryApp/js/vues/addProduct.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1548"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022EqPDoiKJvTDMarCawOSE/vSOnOOdAEJmzzqX\u002BaRH9fg=\u0022"},{"Name":"Last-Modified","Value":"Sun, 22 Dec 2024 10:23:24 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-dte3JN5fjfzwIV5FeAe0DldYqEWf/eoXpO19vTem1Zk="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1507"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022dte3JN5fjfzwIV5FeAe0DldYqEWf/eoXpO19vTem1Zk=\u0022"},{"Name":"Last-Modified","Value":"Thu, 26 Dec 2024 15:26:59 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/InventoryApp/lib/bootstrap/dist/css/bootstrap-grid.agp80tu62r.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-grid.css'))</AssetFile>

@@ -138,8 +138,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>vv87f1pprq</Fingerprint>
-      <Integrity>uwuQ/CdOHxocjl/tegqKz/go93/1aAXYr1cZpiZ7NgM=</Integrity>
+      <Fingerprint>26gzsjafko</Fingerprint>
+      <Integrity>mmSxt0LXSZQaohwsMX0SI3CtuUNcK9C5kWnu06OtX98=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\shared\utils\dropdown.js'))</OriginalItemSpec>
@@ -174,8 +174,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>ug12dn00tn</Fingerprint>
-      <Integrity>EqPDoiKJvTDMarCawOSE/vSOnOOdAEJmzzqX+aRH9fg=</Integrity>
+      <Fingerprint>2ygzk990ns</Fingerprint>
+      <Integrity>dte3JN5fjfzwIV5FeAe0DldYqEWf/eoXpO19vTem1Zk=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\vues\addProduct.js'))</OriginalItemSpec>

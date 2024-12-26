@@ -577,6 +577,51 @@
       ]
     },
     {
+      "Route": "js/shared/utils/dropdown.26gzsjafko.js",
+      "AssetFile": "js/shared/utils/dropdown.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1782"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mmSxt0LXSZQaohwsMX0SI3CtuUNcK9C5kWnu06OtX98=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 26 Dec 2024 15:26:59 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "26gzsjafko"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mmSxt0LXSZQaohwsMX0SI3CtuUNcK9C5kWnu06OtX98="
+        },
+        {
+          "Name": "label",
+          "Value": "js/shared/utils/dropdown.js"
+        }
+      ]
+    },
+    {
       "Route": "js/shared/utils/dropdown.js",
       "AssetFile": "js/shared/utils/dropdown.js",
       "Selectors": [],
@@ -591,7 +636,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1736"
+          "Value": "1782"
         },
         {
           "Name": "Content-Type",
@@ -599,62 +644,17 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"uwuQ/CdOHxocjl/tegqKz/go93/1aAXYr1cZpiZ7NgM=\""
+          "Value": "\"mmSxt0LXSZQaohwsMX0SI3CtuUNcK9C5kWnu06OtX98=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 22 Dec 2024 09:41:11 GMT"
+          "Value": "Thu, 26 Dec 2024 15:26:59 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-uwuQ/CdOHxocjl/tegqKz/go93/1aAXYr1cZpiZ7NgM="
-        }
-      ]
-    },
-    {
-      "Route": "js/shared/utils/dropdown.vv87f1pprq.js",
-      "AssetFile": "js/shared/utils/dropdown.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1736"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"uwuQ/CdOHxocjl/tegqKz/go93/1aAXYr1cZpiZ7NgM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 22 Dec 2024 09:41:11 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "vv87f1pprq"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-uwuQ/CdOHxocjl/tegqKz/go93/1aAXYr1cZpiZ7NgM="
-        },
-        {
-          "Name": "label",
-          "Value": "js/shared/utils/dropdown.js"
+          "Value": "sha256-mmSxt0LXSZQaohwsMX0SI3CtuUNcK9C5kWnu06OtX98="
         }
       ]
     },
@@ -741,6 +741,51 @@
       ]
     },
     {
+      "Route": "js/vues/addProduct.2ygzk990ns.js",
+      "AssetFile": "js/vues/addProduct.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1507"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dte3JN5fjfzwIV5FeAe0DldYqEWf/eoXpO19vTem1Zk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 26 Dec 2024 15:26:59 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2ygzk990ns"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-dte3JN5fjfzwIV5FeAe0DldYqEWf/eoXpO19vTem1Zk="
+        },
+        {
+          "Name": "label",
+          "Value": "js/vues/addProduct.js"
+        }
+      ]
+    },
+    {
       "Route": "js/vues/addProduct.js",
       "AssetFile": "js/vues/addProduct.js",
       "Selectors": [],
@@ -755,7 +800,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1548"
+          "Value": "1507"
         },
         {
           "Name": "Content-Type",
@@ -763,62 +808,17 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"EqPDoiKJvTDMarCawOSE/vSOnOOdAEJmzzqX+aRH9fg=\""
+          "Value": "\"dte3JN5fjfzwIV5FeAe0DldYqEWf/eoXpO19vTem1Zk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 22 Dec 2024 10:23:24 GMT"
+          "Value": "Thu, 26 Dec 2024 15:26:59 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-EqPDoiKJvTDMarCawOSE/vSOnOOdAEJmzzqX+aRH9fg="
-        }
-      ]
-    },
-    {
-      "Route": "js/vues/addProduct.ug12dn00tn.js",
-      "AssetFile": "js/vues/addProduct.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1548"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"EqPDoiKJvTDMarCawOSE/vSOnOOdAEJmzzqX+aRH9fg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 22 Dec 2024 10:23:24 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ug12dn00tn"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-EqPDoiKJvTDMarCawOSE/vSOnOOdAEJmzzqX+aRH9fg="
-        },
-        {
-          "Name": "label",
-          "Value": "js/vues/addProduct.js"
+          "Value": "sha256-dte3JN5fjfzwIV5FeAe0DldYqEWf/eoXpO19vTem1Zk="
         }
       ]
     },
