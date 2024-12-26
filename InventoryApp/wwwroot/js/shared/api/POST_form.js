@@ -31,11 +31,12 @@
                 }
 
                 if (onError) onError(result);
-                return; // Arrêter l'exécution ici si la requête n'est pas OK
+                return; 
             }
             const result = await requete.json(); 
             console.log('✅ Message:', result.message || 'Operation succeeded');
             console.log('📝 Data:', result.data || 'No data provided');
+            window.location.reload();
             if (onSuccess) onSuccess(result);
         } catch (err) {
             console.error(`🚨 Network error: caught while submitting ${formId} on the endpoint ${url}`, err.message);

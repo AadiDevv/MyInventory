@@ -52,25 +52,25 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\shared\api\POST_addItem.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"cpeuo3hnw7"},{"Name":"integrity","Value":"sha256-EIZv2iWjFUbOtCPjNEFXz1QRugs1yNjY807rF/0sBic="},{"Name":"label","Value":"_content/InventoryApp/js/shared/api/POST_addItem.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"473"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022EIZv2iWjFUbOtCPjNEFXz1QRugs1yNjY807rF/0sBic=\u0022"},{"Name":"Last-Modified","Value":"Sun, 22 Dec 2024 08:44:57 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"473"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022EIZv2iWjFUbOtCPjNEFXz1QRugs1yNjY807rF/0sBic=\u0022"},{"Name":"Last-Modified","Value":"Thu, 26 Dec 2024 08:51:05 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/InventoryApp/js/shared/api/POST_addItem.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\shared\api\POST_addItem.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-EIZv2iWjFUbOtCPjNEFXz1QRugs1yNjY807rF/0sBic="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"473"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022EIZv2iWjFUbOtCPjNEFXz1QRugs1yNjY807rF/0sBic=\u0022"},{"Name":"Last-Modified","Value":"Sun, 22 Dec 2024 08:44:57 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"473"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022EIZv2iWjFUbOtCPjNEFXz1QRugs1yNjY807rF/0sBic=\u0022"},{"Name":"Last-Modified","Value":"Thu, 26 Dec 2024 08:51:05 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/InventoryApp/js/shared/api/POST_form.gxpnyiljnq.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\shared\api\POST_form.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"gxpnyiljnq"},{"Name":"integrity","Value":"sha256-BN3BiOnZl9RKIfJEpj/hoQ2fDAlYQC5PBUBf8Z5N6HI="},{"Name":"label","Value":"_content/InventoryApp/js/shared/api/POST_form.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1888"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022BN3BiOnZl9RKIfJEpj/hoQ2fDAlYQC5PBUBf8Z5N6HI=\u0022"},{"Name":"Last-Modified","Value":"Thu, 26 Dec 2024 08:51:03 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/InventoryApp/js/shared/api/POST_form.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\shared\api\POST_form.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2awzl0kK31yTUjD9pmfGwQmaL09HjDdu8mStY/TS1/A="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1905"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u00222awzl0kK31yTUjD9pmfGwQmaL09HjDdu8mStY/TS1/A=\u0022"},{"Name":"Last-Modified","Value":"Mon, 23 Dec 2024 14:41:19 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/InventoryApp/js/shared/api/POST_form.zh26x4b884.js">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\shared\api\POST_form.js'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"zh26x4b884"},{"Name":"integrity","Value":"sha256-2awzl0kK31yTUjD9pmfGwQmaL09HjDdu8mStY/TS1/A="},{"Name":"label","Value":"_content/InventoryApp/js/shared/api/POST_form.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1905"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u00222awzl0kK31yTUjD9pmfGwQmaL09HjDdu8mStY/TS1/A=\u0022"},{"Name":"Last-Modified","Value":"Mon, 23 Dec 2024 14:41:19 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-BN3BiOnZl9RKIfJEpj/hoQ2fDAlYQC5PBUBf8Z5N6HI="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1888"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022BN3BiOnZl9RKIfJEpj/hoQ2fDAlYQC5PBUBf8Z5N6HI=\u0022"},{"Name":"Last-Modified","Value":"Thu, 26 Dec 2024 08:51:03 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/InventoryApp/js/shared/utils/alert.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\shared\utils\alert.js'))</AssetFile>

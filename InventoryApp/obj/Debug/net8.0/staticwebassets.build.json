@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bjXAIsFpltApuhlQlrz4k6JHi7zSry2Ob5AsL35PBWY=",
+  "Hash": "qlKuWTaJ5U4pUSJCpxnA6gWl379wPMFaHRxT/DbQEMk=",
   "Source": "InventoryApp",
   "BasePath": "_content/InventoryApp",
   "Mode": "Default",
@@ -157,8 +157,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "zh26x4b884",
-      "Integrity": "2awzl0kK31yTUjD9pmfGwQmaL09HjDdu8mStY/TS1/A=",
+      "Fingerprint": "gxpnyiljnq",
+      "Integrity": "BN3BiOnZl9RKIfJEpj/hoQ2fDAlYQC5PBUBf8Z5N6HI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\shared\\api\\POST_form.js"
@@ -1879,7 +1879,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 22 Dec 2024 08:44:57 GMT"
+          "Value": "Thu, 26 Dec 2024 08:51:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1924,7 +1924,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 22 Dec 2024 08:44:57 GMT"
+          "Value": "Thu, 26 Dec 2024 08:51:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1939,6 +1939,51 @@
       ]
     },
     {
+      "Route": "js/shared/api/POST_form.gxpnyiljnq.js",
+      "AssetFile": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\shared\\api\\POST_form.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1888"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BN3BiOnZl9RKIfJEpj/hoQ2fDAlYQC5PBUBf8Z5N6HI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 26 Dec 2024 08:51:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gxpnyiljnq"
+        },
+        {
+          "Name": "label",
+          "Value": "js/shared/api/POST_form.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-BN3BiOnZl9RKIfJEpj/hoQ2fDAlYQC5PBUBf8Z5N6HI="
+        }
+      ]
+    },
+    {
       "Route": "js/shared/api/POST_form.js",
       "AssetFile": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\shared\\api\\POST_form.js",
       "Selectors": [],
@@ -1949,7 +1994,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1905"
+          "Value": "1888"
         },
         {
           "Name": "Content-Type",
@@ -1957,11 +2002,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"2awzl0kK31yTUjD9pmfGwQmaL09HjDdu8mStY/TS1/A=\""
+          "Value": "\"BN3BiOnZl9RKIfJEpj/hoQ2fDAlYQC5PBUBf8Z5N6HI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 23 Dec 2024 14:41:19 GMT"
+          "Value": "Thu, 26 Dec 2024 08:51:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1971,52 +2016,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-2awzl0kK31yTUjD9pmfGwQmaL09HjDdu8mStY/TS1/A="
-        }
-      ]
-    },
-    {
-      "Route": "js/shared/api/POST_form.zh26x4b884.js",
-      "AssetFile": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\shared\\api\\POST_form.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1905"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"2awzl0kK31yTUjD9pmfGwQmaL09HjDdu8mStY/TS1/A=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 23 Dec 2024 14:41:19 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "zh26x4b884"
-        },
-        {
-          "Name": "label",
-          "Value": "js/shared/api/POST_form.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-2awzl0kK31yTUjD9pmfGwQmaL09HjDdu8mStY/TS1/A="
+          "Value": "sha256-BN3BiOnZl9RKIfJEpj/hoQ2fDAlYQC5PBUBf8Z5N6HI="
         }
       ]
     },

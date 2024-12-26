@@ -3,19 +3,11 @@ using System.Collections.Generic;
 
 namespace InventoryApp.Models;
 
-public partial class Category
+public partial class ProductType
 {
     public int Id { get; set; }
 
     public string Name { get; set; } = null!;
-
-    public string? Description { get; set; }
-
-    public int? ProductCount { get; set; }
-
-    public int? UserId { get; set; }
-
-    public int? ProductTypeId { get; set; }
 
     public int? DistinctProductCount { get; set; }
 
@@ -23,9 +15,7 @@ public partial class Category
 
     public decimal? TotalValue { get; set; }
 
-    public virtual ProductType? ProductType { get; set; }
+    public virtual ICollection<Category> Categories { get; set; } = new List<Category>();
 
     public virtual ICollection<Product> Products { get; set; } = new List<Product>();
-
-    public virtual User? User { get; set; }
 }

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # List of models
-models=("Product" "Category" "StockOut" "StockOutItem" "StockEntry" "StockEntryItem" "User" "Supplier" )
+models=("ProductType")
 
 # DbContext
 dbContext="MyInventoryContext"

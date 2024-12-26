@@ -82,7 +82,12 @@ namespace InventoryApp.Controllers_API
         {
             try
             {
-                var existingProduct = await _context.Products.FirstOrDefaultAsync(el => el.Name.ToLower() == request.NewProductName.ToLower());
+                // Ici on part chercher si un pdt correspond deja (Meme frns, nom et category)
+                var existingProduct = await _context.Products
+                    .FirstOrDefaultAsync(el =>
+                        string.Equals(el.Name, request.NewProductName, StringComparison.OrdinalIgnoreCase)
+                        && el.SupplierId == request.SupplierId
+                        && el.CategoryId == request.CategoryId);
 
                 if (existingProduct != null)
                 {
@@ -98,35 +103,46 @@ namespace InventoryApp.Controllers_API
 
 
                 }
-
-                var product = new Product
+                else
                 {
-                    Name = request.NewProductName,
-                    Quantity = request.Quantity, // Ajoutez la quantité initiale
-                    CategoryId = request.CategoryId,
-                    SupplierId = request.SupplierId,
-                    Description = request.Description
+                    var product = new Product
+                    {
+                        Name = request.NewProductName,
+                        Quantity = request.Quantity, // Ajoutez la quantité initiale
+                        CategoryId = request.CategoryId,
+                        SupplierId = request.SupplierId,
+                        Description = request.Description
 
-                };
+                    };
 
-                _context.Products.Add(product);
-                await _context.SaveChangesAsync();
-
-                var category = await _context.Categories.FindAsync(product.CategoryId);
-                if (category != null) {
-                    category.ProductCount = await _context.Products.CountAsync(p => p.CategoryId == product.CategoryId);
+                    _context.Products.Add(product);
                     await _context.SaveChangesAsync();
+
+                    var category = await _context.Categories.FindAsync(product.CategoryId);
+                    if (category != null)
+                    {
+                        category.ProductCount = await _context.Products.CountAsync(p => p.CategoryId == product.CategoryId);
+                        await _context.SaveChangesAsync();
+                    }
+
+                    //return CreatedAtAction("GetCategory", new { id = product.Id }, new
+                    //{
+                    //    success = true,
+                    //    message = "Product created successfully.",
+                    //    data = product
+                    //});
+                    return Ok(new
+                    {
+                        success = true,
+                        message = "Product created successfully.",
+                        data = existingProduct
+                    });
                 }
-                
-                return CreatedAtAction("GetCategory", new { id = product.Id }, new
-                {
-                    success = true,
-                    message = "Product created successfully.",
-                    data = product
-                });
+          
             }
             catch (Exception ex)
             {
+                Response.ContentType = "application/json";
                 return StatusCode(500, new
                 {
                     success = false,

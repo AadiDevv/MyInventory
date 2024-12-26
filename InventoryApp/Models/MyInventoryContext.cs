@@ -19,6 +19,8 @@ public partial class MyInventoryContext : DbContext
 
     public virtual DbSet<Product> Products { get; set; }
 
+    public virtual DbSet<ProductType> ProductTypes { get; set; }
+
     public virtual DbSet<StockEntry> StockEntries { get; set; }
 
     public virtual DbSet<StockEntryItem> StockEntryItems { get; set; }
@@ -41,8 +43,17 @@ public partial class MyInventoryContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK__Categori__3214EC07962434F4");
 
+            entity.Property(e => e.DistinctProductCount).HasDefaultValue(0);
             entity.Property(e => e.Name).HasMaxLength(250);
             entity.Property(e => e.ProductCount).HasDefaultValue(0);
+            entity.Property(e => e.TotalQuantity).HasDefaultValue(0);
+            entity.Property(e => e.TotalValue)
+                .HasDefaultValue(0m)
+                .HasColumnType("decimal(18, 2)");
+
+            entity.HasOne(d => d.ProductType).WithMany(p => p.Categories)
+                .HasForeignKey(d => d.ProductTypeId)
+                .HasConstraintName("FK_Categories_ProductType");
 
             entity.HasOne(d => d.User).WithMany(p => p.Categories)
                 .HasForeignKey(d => d.UserId)
@@ -53,7 +64,11 @@ public partial class MyInventoryContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK__Products__3214EC07F6A6E60B");
 
+            entity.Property(e => e.Color).HasMaxLength(50);
             entity.Property(e => e.Name).HasMaxLength(50);
+            entity.Property(e => e.PricePurchase).HasColumnType("decimal(18, 2)");
+            entity.Property(e => e.PriceSale).HasColumnType("decimal(18, 2)");
+            entity.Property(e => e.Reference).HasMaxLength(250);
             entity.Property(e => e.Status)
                 .HasMaxLength(10)
                 .HasDefaultValue("active");
@@ -62,6 +77,10 @@ public partial class MyInventoryContext : DbContext
                 .HasForeignKey(d => d.CategoryId)
                 .HasConstraintName("FK__Products__Catego__412EB0B6");
 
+            entity.HasOne(d => d.ProductType).WithMany(p => p.Products)
+                .HasForeignKey(d => d.ProductTypeId)
+                .HasConstraintName("FK_Product_ProductType");
+
             entity.HasOne(d => d.Supplier).WithMany(p => p.Products)
                 .HasForeignKey(d => d.SupplierId)
                 .HasConstraintName("FK__Products__Suppli__4222D4EF");
@@ -69,6 +88,20 @@ public partial class MyInventoryContext : DbContext
             entity.HasOne(d => d.User).WithMany(p => p.Products)
                 .HasForeignKey(d => d.UserId)
                 .HasConstraintName("FK__Products__UserId__4316F928");
+        });
+
+        modelBuilder.Entity<ProductType>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__ProductT__3214EC07EB8B96EA");
+
+            entity.ToTable("ProductType");
+
+            entity.Property(e => e.DistinctProductCount).HasDefaultValue(0);
+            entity.Property(e => e.Name).HasMaxLength(100);
+            entity.Property(e => e.TotalQuantity).HasDefaultValue(0);
+            entity.Property(e => e.TotalValue)
+                .HasDefaultValue(0m)
+                .HasColumnType("decimal(18, 2)");
         });
 
         modelBuilder.Entity<StockEntry>(entity =>

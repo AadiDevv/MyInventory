@@ -102,8 +102,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>zh26x4b884</Fingerprint>
-      <Integrity>2awzl0kK31yTUjD9pmfGwQmaL09HjDdu8mStY/TS1/A=</Integrity>
+      <Fingerprint>gxpnyiljnq</Fingerprint>
+      <Integrity>BN3BiOnZl9RKIfJEpj/hoQ2fDAlYQC5PBUBf8Z5N6HI=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\shared\api\POST_form.js'))</OriginalItemSpec>
