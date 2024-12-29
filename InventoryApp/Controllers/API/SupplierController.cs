@@ -43,9 +43,9 @@ namespace InventoryApp.Controllers_API
         }
 
         // GET: api/Category?Query
-        [HttpGet]
+        [HttpGet("ByProductType")]
         public async Task<ActionResult<IEnumerable<Supplier>>> GetSupplierById([FromQuery] int ProductTypeId)
-        {
+        { Console.WriteLine("Got parametre : " + ProductTypeId);
             var suppliers = await _context.Suppliers
                 .Where(s => s.ProductTypeId == ProductTypeId)
                 .ToListAsync();
@@ -105,7 +105,10 @@ namespace InventoryApp.Controllers_API
                 }
 
                 // Add supplier to database
-                var supplier = new Supplier { Name = request.NewSupplierName };
+                var supplier = new Supplier
+                { Name = request.NewSupplierName,
+                  ProductTypeId = request.ProductTypeId
+                };
                 _context.Suppliers.Add(supplier);
                 await _context.SaveChangesAsync();
 

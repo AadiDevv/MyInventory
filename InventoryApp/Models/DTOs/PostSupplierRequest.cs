@@ -11,6 +11,9 @@ namespace InventoryApp.Models.DTOs
         [JsonPropertyName("name")] // this is where Model Binding will see the link between json body request
         public string NewSupplierName { get; set; }
 
+        [Required]
+        public int? ProductTypeId { get; set; }
+
         public string? ContactName { get; set; }
 
         [Phone] // Check if the format of phone is correct

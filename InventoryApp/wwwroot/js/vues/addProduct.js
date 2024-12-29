@@ -11,25 +11,47 @@ export async function handleAddProduct() {
 
         const modelName = button.id.replace('NewModel', '');
         const input = document.querySelector(`.new${modelName}Input`);
-        const selectId = `${modelName}-select`
+        const selectId = `${modelName}-select`;
 
-        handleDropdown(selectId, `new${modelName}_container`);
+        if (modelName === 'ProductType') {
+            handleDropdown(selectId, 'newSection', 'add-new', true);            // Gérer l'affichage de la section principale (newSection)
+            handleDropdown(selectId, `new${modelName}_container`);            // Gérer l'affichage du formulaire d'ajout spécifique (newProductType_container)
+        } else {
+            handleDropdown(selectId, `new${modelName}_container`, 'add-new');            // Gérer les autres cas (Category, Supplier)
+
+        }
 
 
         button.addEventListener('click', async () => {
+            const newItemName = input.value;  
+            const addItemContainer = document.getElementById(`new${modelName}_container`);
+            const productTypeId = addItemContainer.dataset.productTypeId;
 
-            (console.log(`clicked on ${button.id}`))
-            const newItemName = input.value;
-
-            
             if (!newItemName) {
                 showAlert(`Please enter a ${modelName.toLowerCase()} name.`, 'danger');
                 return;
             }
 
             try {
-                await addItem(`/API/${modelName}`, { name : newItemName });
-                await updateDropdown(selectId, modelName, newItemName);
+
+                const isProductType = (modelName === 'ProductType');                // Déterminer si on ajoute l'option "data-trigger = 'true'" dans les optionTag (pour ProductType uniquement)
+
+                if (isProductType) {
+                    await addItem(`/API/${modelName}`, { name: newItemName });
+                    await updateDropdown(selectId, modelName, newItemName, null, isProductType);       // Mettre à jour le dropdown avec le nouvel élément
+
+                } else {
+                    if (!productTypeId) {
+                        console.error('❌ ProductTypeId is undefined or null.');
+                        return;
+                    }
+
+                    await addItem(`/API/${modelName}`, { name: newItemName, ProductTypeId: productTypeId});
+                    await updateDropdown(selectId, modelName, newItemName, productTypeId, isProductType);       // Mettre à jour le dropdown avec le nouvel élément, en filtrant
+
+                }
+
+
 
 
             } catch (error) {

@@ -42,7 +42,8 @@ namespace InventoryApp.Controllers_API
             return category;
         }
         // GET: api/Category?Query
-        [HttpGet]
+
+        [HttpGet("ByProductType")]
         public async Task<ActionResult<IEnumerable<Category>>> GetCategoriesById([FromQuery] int ProductTypeId)
         {
             var categories = await _context.Categories
@@ -102,7 +103,11 @@ namespace InventoryApp.Controllers_API
                     });
                 }
 
-                var category = new Category { Name = request.NewCategoryName };
+                var category = new Category
+                {
+                    Name = request.NewCategoryName,
+                    ProductTypeId = request.ProductTypeId
+                };
                 _context.Categories.Add(category);
                 await _context.SaveChangesAsync();
 

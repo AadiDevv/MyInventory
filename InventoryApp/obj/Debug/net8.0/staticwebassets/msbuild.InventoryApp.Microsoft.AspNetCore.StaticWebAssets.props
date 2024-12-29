@@ -138,8 +138,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>26gzsjafko</Fingerprint>
-      <Integrity>mmSxt0LXSZQaohwsMX0SI3CtuUNcK9C5kWnu06OtX98=</Integrity>
+      <Fingerprint>1n0h8cdke5</Fingerprint>
+      <Integrity>g1qUb6wW7WCO8mqeude8gWe94RK6dfeDkG3FLgYEs4E=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\shared\utils\dropdown.js'))</OriginalItemSpec>
@@ -156,8 +156,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>n7nlo6b7i7</Fingerprint>
-      <Integrity>PTfyVXomN/D3D0qj8GnuyVZ6vJPVYAuL1A9ZT4xrIQc=</Integrity>
+      <Fingerprint>eg6j68jwcs</Fingerprint>
+      <Integrity>br2eF7g/Rqou0Zw8A2UmTxJtAOk4eQ1zcK4Hr2AQ6Is=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</OriginalItemSpec>
@@ -174,8 +174,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>2ygzk990ns</Fingerprint>
-      <Integrity>dte3JN5fjfzwIV5FeAe0DldYqEWf/eoXpO19vTem1Zk=</Integrity>
+      <Fingerprint>60k3lg12cb</Fingerprint>
+      <Integrity>+nLlgxYGP7neGVZopZYA2R+VaJ1n5bMvrY9DOz5SN4s=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\vues\addProduct.js'))</OriginalItemSpec>

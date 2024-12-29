@@ -5,14 +5,12 @@ import { submitForm } from "./shared/api/POST_form.js";
 document.addEventListener('DOMContentLoaded', async () => { 
     console.log("hello");
 
-
-    // AddProduct.cshtml view
-
-    const controllers = ['Supplier', 'Category'];
-    for (const controller of controllers) {
-        if (document.getElementById(`${controller}-select`)){
-            await updateDropdown(`${controller}-select`, controller);
-        }
+    const productTypeEl = document.getElementById('ProductType-select');
+    if (productTypeEl) {
+        await updateDropdown('ProductType-select', 'ProductType', null, null, true);
+    }
+    else {
+        console.log('El Select tag not found')
     }
 
     submitForm('addProduct', '/API/Product',
