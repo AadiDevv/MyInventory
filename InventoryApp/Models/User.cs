@@ -15,6 +15,8 @@ public partial class User
 
     public virtual ICollection<Category> Categories { get; set; } = new List<Category>();
 
+    public virtual ICollection<ProductType> ProductTypes { get; set; } = new List<ProductType>();
+
     public virtual ICollection<Product> Products { get; set; } = new List<Product>();
 
     public virtual ICollection<StockEntry> StockEntries { get; set; } = new List<StockEntry>();

@@ -29,7 +29,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 29 Dec 2024 15:50:16 GMT"
+          "Value": "Tue, 31 Dec 2024 11:57:30 GMT"
         }
       ],
       "EndpointProperties": [
@@ -74,7 +74,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 29 Dec 2024 15:50:16 GMT"
+          "Value": "Tue, 31 Dec 2024 11:57:30 GMT"
         }
       ],
       "EndpointProperties": [
@@ -245,6 +245,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "js/shared/api/GET_account.js",
+      "AssetFile": "js/shared/api/GET_account.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "379"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dNU7V1s2ahft+l0Y9BDs67fiIEXjoc5TseSe+m9zMQQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 31 Dec 2024 11:15:39 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-dNU7V1s2ahft+l0Y9BDs67fiIEXjoc5TseSe+m9zMQQ="
+        }
+      ]
+    },
+    {
+      "Route": "js/shared/api/GET_account.kmee1ykphx.js",
+      "AssetFile": "js/shared/api/GET_account.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "379"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dNU7V1s2ahft+l0Y9BDs67fiIEXjoc5TseSe+m9zMQQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 31 Dec 2024 11:15:39 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kmee1ykphx"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-dNU7V1s2ahft+l0Y9BDs67fiIEXjoc5TseSe+m9zMQQ="
+        },
+        {
+          "Name": "label",
+          "Value": "js/shared/api/GET_account.js"
         }
       ]
     },
@@ -603,7 +685,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 28 Dec 2024 09:18:39 GMT"
+          "Value": "Tue, 31 Dec 2024 11:57:30 GMT"
         }
       ],
       "EndpointProperties": [
@@ -648,7 +730,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 28 Dec 2024 09:18:39 GMT"
+          "Value": "Tue, 31 Dec 2024 11:57:30 GMT"
         }
       ],
       "EndpointProperties": [
@@ -685,7 +767,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Dec 2024 09:56:32 GMT"
+          "Value": "Tue, 31 Dec 2024 11:57:30 GMT"
         }
       ],
       "EndpointProperties": [
@@ -730,13 +812,95 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Dec 2024 09:56:32 GMT"
+          "Value": "Tue, 31 Dec 2024 11:57:30 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
           "Value": "sha256-br2eF7g/Rqou0Zw8A2UmTxJtAOk4eQ1zcK4Hr2AQ6Is="
+        }
+      ]
+    },
+    {
+      "Route": "js/vues/Layout.js",
+      "AssetFile": "js/vues/Layout.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "826"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uclnxhYakVTip0+iHOn9frEz/QxsFHx5+zqA+AciyAo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 31 Dec 2024 11:15:39 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-uclnxhYakVTip0+iHOn9frEz/QxsFHx5+zqA+AciyAo="
+        }
+      ]
+    },
+    {
+      "Route": "js/vues/Layout.z9ucisxf10.js",
+      "AssetFile": "js/vues/Layout.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "826"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uclnxhYakVTip0+iHOn9frEz/QxsFHx5+zqA+AciyAo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 31 Dec 2024 11:15:39 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "z9ucisxf10"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-uclnxhYakVTip0+iHOn9frEz/QxsFHx5+zqA+AciyAo="
+        },
+        {
+          "Name": "label",
+          "Value": "js/vues/Layout.js"
         }
       ]
     },
@@ -767,7 +931,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 29 Dec 2024 08:35:06 GMT"
+          "Value": "Tue, 31 Dec 2024 11:57:30 GMT"
         }
       ],
       "EndpointProperties": [
@@ -812,7 +976,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 29 Dec 2024 08:35:06 GMT"
+          "Value": "Tue, 31 Dec 2024 11:57:30 GMT"
         }
       ],
       "EndpointProperties": [

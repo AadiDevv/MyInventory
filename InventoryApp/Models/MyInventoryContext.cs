@@ -96,12 +96,18 @@ public partial class MyInventoryContext : DbContext
 
             entity.ToTable("ProductType");
 
+            entity.HasIndex(e => e.UserId, "IX_ProductType_UserId");
+
             entity.Property(e => e.DistinctProductCount).HasDefaultValue(0);
             entity.Property(e => e.Name).HasMaxLength(100);
             entity.Property(e => e.TotalQuantity).HasDefaultValue(0);
             entity.Property(e => e.TotalValue)
                 .HasDefaultValue(0m)
                 .HasColumnType("decimal(18, 2)");
+
+            entity.HasOne(d => d.User).WithMany(p => p.ProductTypes)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("FK_ProductType_User");
         });
 
         modelBuilder.Entity<StockEntry>(entity =>

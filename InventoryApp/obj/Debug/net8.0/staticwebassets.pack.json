@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\shared\\api\\GET_account.js",
+      "PackagePath": "staticwebassets\\js\\shared\\api\\GET_account.js"
+    },
+    {
       "Id": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\shared\\api\\GET_getItems.js",
       "PackagePath": "staticwebassets\\js\\shared\\api\\GET_getItems.js"
     },
@@ -35,6 +39,10 @@
     {
       "Id": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\vues\\Layout.js",
+      "PackagePath": "staticwebassets\\js\\vues\\Layout.js"
     },
     {
       "Id": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\vues\\addProduct.js",
