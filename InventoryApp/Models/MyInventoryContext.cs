@@ -57,7 +57,7 @@ public partial class MyInventoryContext : DbContext
 
             entity.HasOne(d => d.User).WithMany(p => p.Categories)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__Categorie__UserI__3A81B327");
+                .HasConstraintName("FK_Categories_UserId");
         });
 
         modelBuilder.Entity<Product>(entity =>
@@ -87,7 +87,7 @@ public partial class MyInventoryContext : DbContext
 
             entity.HasOne(d => d.User).WithMany(p => p.Products)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__Products__UserId__4316F928");
+                .HasConstraintName("FK_Products_UserId");
         });
 
         modelBuilder.Entity<ProductType>(entity =>
@@ -121,7 +121,7 @@ public partial class MyInventoryContext : DbContext
 
             entity.HasOne(d => d.User).WithMany(p => p.StockEntries)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__StockEntr__UserI__48CFD27E");
+                .HasConstraintName("FK_StockEntry_UserId");
         });
 
         modelBuilder.Entity<StockEntryItem>(entity =>
@@ -149,10 +149,6 @@ public partial class MyInventoryContext : DbContext
 
             entity.Property(e => e.Timestamp).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.Type).HasMaxLength(10);
-
-            entity.HasOne(d => d.User).WithMany(p => p.StockOuts)
-                .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__StockOut__UserId__5070F446");
         });
 
         modelBuilder.Entity<StockOutItem>(entity =>
@@ -187,16 +183,16 @@ public partial class MyInventoryContext : DbContext
 
             entity.HasOne(d => d.User).WithMany(p => p.Suppliers)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__Suppliers__UserI__3D5E1FD2");
+                .HasConstraintName("FK_Suppliers_UserId");
         });
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC077D9049D5");
+            entity.HasKey(e => e.Id).HasName("PK__Users_Te__3214EC07D61330EF");
 
             entity.Property(e => e.Email).HasMaxLength(100);
-            entity.Property(e => e.Password).HasMaxLength(250);
-            entity.Property(e => e.Username).HasMaxLength(250);
+            entity.Property(e => e.Password).HasMaxLength(256);
+            entity.Property(e => e.Username).HasMaxLength(50);
         });
 
         OnModelCreatingPartial(modelBuilder);

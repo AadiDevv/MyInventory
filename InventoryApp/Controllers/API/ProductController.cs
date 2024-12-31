@@ -84,10 +84,11 @@ namespace InventoryApp.Controllers_API
             {
                 // Ici on part chercher si un pdt correspond deja (Meme frns, nom et category)
                 var existingProduct = await _context.Products
-                    .FirstOrDefaultAsync(el =>
-                        string.Equals(el.Name, request.NewProductName, StringComparison.OrdinalIgnoreCase)
-                        && el.SupplierId == request.SupplierId
-                        && el.CategoryId == request.CategoryId);
+        .FirstOrDefaultAsync(el =>
+            el.Name.ToLower() == request.NewProductName.ToLower()
+            && el.SupplierId == request.SupplierId
+            && el.CategoryId == request.CategoryId);
+
 
                 if (existingProduct != null)
                 {
@@ -108,9 +109,12 @@ namespace InventoryApp.Controllers_API
                     var product = new Product
                     {
                         Name = request.NewProductName,
+                        Reference = request.Reference,
                         Quantity = request.Quantity, // Ajoutez la quantité initiale
                         CategoryId = request.CategoryId,
                         SupplierId = request.SupplierId,
+                        PricePurchase = request.PricePurchase,
+                        PriceSale = request.PriceSale,
                         Description = request.Description
 
                     };

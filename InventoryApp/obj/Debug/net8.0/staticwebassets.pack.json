@@ -41,6 +41,10 @@
       "PackagePath": "staticwebassets\\js\\vues\\addProduct.js"
     },
     {
+      "Id": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\vues\\register.js",
+      "PackagePath": "staticwebassets\\js\\vues\\register.js"
+    },
+    {
       "Id": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },

@@ -8,6 +8,59 @@
 	<h1 class="display-4">Add a Product</h1>
 </div>
 
+<!--
+⚙️ INSTRUCTIONS POUR AJOUTER UN NOUVEAU CHAMP AU FORMULAIRE "ADD PRODUCT"
+==============================================================
+
+1️⃣ ID DU SÉLECTEUR : ${ModelName}-select
+   - Exemple : Category-select, Supplier-select
+   - Rôle : Utilisé par le JavaScript pour gérer les interactions et fetcher les données dynamiquement.
+
+2️⃣ ID DU CONTENEUR DYNAMIQUE : new${ModelName}_container
+   - Exemple : newCategory_container, newSupplier_container
+   - Rôle : Permet de cacher/afficher dynamiquement la section d'ajout.
+
+3️⃣ CLASSE DE L'INPUT DYNAMIQUE : new${ModelName}Input
+   - Exemple : newCategoryInput, newSupplierInput
+   - Rôle : Permet au JavaScript de récupérer la valeur saisie pour un ajout dynamique.
+
+4️⃣ ID DU BOUTON DYNAMIQUE : NewModel${ModelName}
+   - Exemple : NewModelCategory, NewModelSupplier
+   - Rôle : Déclenche l'événement d'ajout d'un nouvel élément via JavaScript.
+
+5️⃣ CLASSE DU BOUTON DYNAMIQUE : New${ModelName}
+   - Exemple : NewCategory, NewSupplier
+   - Rôle : Identifiant secondaire pour les événements JavaScript.
+
+6️⃣ ATTRIBUT NAME : DOIT OBLIGATOIREMENT CORRESPONDRE AU NOM EXACT DE LA PROPRIÉTÉ DANS LE MODÈLE C#.
+   - Exemple : name="CategoryId", name="SupplierId"
+   - Rôle : Permet au backend de mapper correctement les valeurs.
+
+7️⃣ ID DE LA SECTION DYNAMIQUE : newSection
+   - Exemple : `<section id="newSection"></section>`
+   - Rôle : Utilisée pour afficher dynamiquement des sous-champs après la sélection d'un élément parent (ProductType).
+
+8️⃣ ATTRIBUT DATA-PRODUCT-TYPE-ID : STOCKE DYNAMIQUEMENT L'ID DU PRODUCTTYPE SÉLECTIONNÉ.
+   - Exemple : `<div id="newCategory_container" data-product-type-id="3"></div>`
+   - Rôle : Permet au JavaScript de transmettre dynamiquement cet ID lors de l'ajout d'une catégorie ou d'un fournisseur.
+
+9️⃣ CONVENTIONS DE NOMMAGE :
+   - Sélecteur : ${ModelName}-select
+   - Conteneur Dynamique : new${ModelName}_container
+   - Input Dynamique : new${ModelName}Input
+   - Bouton Dynamique : NewModel${ModelName}
+   - Classe Bouton : New${ModelName}
+   - Attribut name : Correspond au modèle backend.
+   - Attribut dynamique : data-product-type-id (si lié à un parent dynamique).
+
+BONNES PRATIQUES :
+- Respecter strictement la nomenclature des IDs et classes.
+- Tester chaque nouvelle interaction après ajout.
+- Vérifier dans l'inspecteur que les data-* sont correctement définis.
+
+FIN INSTRUCTIONS
+==============================================================
+-->
 <!-- Formulaire pour ajouter un produit -->
 <form id="addProduct" method="post" class="container mt-4">
 
@@ -15,6 +68,12 @@
 	<div class="mb-3">
 		<label class="form-label">Name</label>
 		<input type="text" class="form-control" name="name" />
+	</div>
+
+	<!-- Champ pour REFERENCE du produit -->
+	<div class="mb-3">
+		<label class="form-label">Reference</label>
+		<input type="text" class="form-control" name="Reference" />
 	</div>
 
 	<!-- Champ pour la quantité du produit -->
@@ -70,6 +129,16 @@
 		</div>
 	</section>
 	
+	<!-- Champ pour le PRIX du produit -->
+	<div class="mb-3">
+		<label class="form-label">Supplier Price</label>
+		<input type="number" class="form-control" name="PricePurchase" placeholder="0" step="0.01" />
+	</div>
+
+	<div class="mb-3">
+		<label class="form-label">Sale Price</label>
+		<input type="number" class="form-control" name="PriceSale" placeholder="0" step="0.01" />
+	</div>
 
 	<!-- Champ pour une description du produit -->
 	<div class="mb-3">

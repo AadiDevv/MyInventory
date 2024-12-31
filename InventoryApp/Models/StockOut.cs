@@ -16,6 +16,4 @@ public partial class StockOut
     public int? UserId { get; set; }
 
     public virtual ICollection<StockOutItem> StockOutItems { get; set; } = new List<StockOutItem>();
-
-    public virtual User? User { get; set; }
 }
