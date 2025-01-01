@@ -14,6 +14,9 @@ namespace InventoryApp.Models.DTOs
         [Required]
         public int? ProductTypeId { get; set; }
 
+        //[Required]
+        //public int? UserId { get; set; }
+
         public string? ContactName { get; set; }
 
         [Phone] // Check if the format of phone is correct

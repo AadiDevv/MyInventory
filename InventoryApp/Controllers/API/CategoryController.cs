@@ -43,7 +43,7 @@ namespace InventoryApp.Controllers_API
         }
         // GET: api/Category?Query
 
-        [HttpGet("ByProductType")]
+        [HttpGet("ByFilters")]
         public async Task<ActionResult<IEnumerable<Category>>> GetCategoriesById([FromQuery] int ProductTypeId)
         {
             var categories = await _context.Categories
@@ -92,7 +92,7 @@ namespace InventoryApp.Controllers_API
         {
             try
             {
-                var existingCategory = await _context.Categories.FirstOrDefaultAsync(c => c.Name.ToLower() == request.NewCategoryName.ToLower());
+                var existingCategory = await _context.Categories.FirstOrDefaultAsync(c => c.Name.ToLower() == request.NewCategoryName.ToLower() && c.ProductTypeId == request.ProductTypeId);
                 ;
                 if (existingCategory != null)
                 {
@@ -106,7 +106,8 @@ namespace InventoryApp.Controllers_API
                 var category = new Category
                 {
                     Name = request.NewCategoryName,
-                    ProductTypeId = request.ProductTypeId
+                    ProductTypeId = request.ProductTypeId,
+                    //UserId = request.UserId
                 };
                 _context.Categories.Add(category);
                 await _context.SaveChangesAsync();

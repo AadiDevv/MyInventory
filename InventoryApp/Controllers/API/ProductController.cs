@@ -87,7 +87,8 @@ namespace InventoryApp.Controllers_API
         .FirstOrDefaultAsync(el =>
             el.Name.ToLower() == request.NewProductName.ToLower()
             && el.SupplierId == request.SupplierId
-            && el.CategoryId == request.CategoryId);
+            && el.CategoryId == request.CategoryId
+            );
 
 
                 if (existingProduct != null)
@@ -115,7 +116,7 @@ namespace InventoryApp.Controllers_API
                         SupplierId = request.SupplierId,
                         PricePurchase = request.PricePurchase,
                         PriceSale = request.PriceSale,
-                        Description = request.Description
+                        Description = request.Description,
 
                     };
 

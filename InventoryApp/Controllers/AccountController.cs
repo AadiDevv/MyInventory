@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
-public class AccountController : Controller
+public class AccountController : BaseController
 {
     private readonly MyInventoryContext _context;
     private readonly string _jwtKey;
@@ -71,20 +71,19 @@ public class AccountController : Controller
         }
 
         HttpContext.Session.SetString("UserId", user.Id.ToString());
+        HttpContext.Session.SetString("UserName", user.Username);
 
-        // Passer les informations utilisateur via TempData
-        TempData["Connected"] = true;
-        TempData["Username"] = user.Username;
-        TempData["Email"] = user.Email;
+        // 🔑 Force la sauvegarde explicite de la session
+        await HttpContext.Session.CommitAsync();
 
         // Retourner la vue Index du dossier Home
-        return View("~/Views/Home/Index.cshtml");
+        return Redirect("/Home/Index"); // Utiliser un chemin absolu pour forcer le middleware
 
     }
     [HttpGet]
     public async Task<IActionResult> Profile()
     {
-        var userId = HttpContext.Items["UserId"]?.ToString();
+        var userId = HttpContext.Session.GetString("UserId");
 
         if (userId == null || !int.TryParse(userId, out int userIdInt))
             return await Task.FromResult(Unauthorized());

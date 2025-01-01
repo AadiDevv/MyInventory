@@ -2,10 +2,14 @@
 import { addItem } from "../shared/api/POST_addItem.js";
 import { updateDropdown, handleDropdown } from "../shared/utils/dropdown.js";
 import { showAlert } from "../shared/utils/alert.js";
+import { getCurrentUser } from "../shared/api/GET_account.js";
+
 
 
 export async function handleAddProduct() {
     const buttons = document.querySelectorAll('[id^=NewModel]');
+
+    const user = await getCurrentUser();
 
     buttons.forEach(button => {
 
@@ -14,7 +18,7 @@ export async function handleAddProduct() {
         const selectId = `${modelName}-select`;
 
         if (modelName === 'ProductType') {
-            handleDropdown(selectId, 'newSection', 'add-new', true);            // Gérer l'affichage de la section principale (newSection)
+            handleDropdown(selectId, 'newSection', 'add-new', true, user.id);            // Gérer l'affichage de la section principale (newSection)
             handleDropdown(selectId, `new${modelName}_container`);            // Gérer l'affichage du formulaire d'ajout spécifique (newProductType_container)
         } else {
             handleDropdown(selectId, `new${modelName}_container`, 'add-new');            // Gérer les autres cas (Category, Supplier)
@@ -23,7 +27,7 @@ export async function handleAddProduct() {
 
 
         button.addEventListener('click', async () => {
-            const newItemName = input.value;  
+            const newItemName = input.value;
             const addItemContainer = document.getElementById(`new${modelName}_container`);
             const productTypeId = addItemContainer.dataset.productTypeId;
 
@@ -37,8 +41,8 @@ export async function handleAddProduct() {
                 const isProductType = (modelName === 'ProductType');                // Déterminer si on ajoute l'option "data-trigger = 'true'" dans les optionTag (pour ProductType uniquement)
 
                 if (isProductType) {
-                    await addItem(`/API/${modelName}`, { name: newItemName });
-                    await updateDropdown(selectId, modelName, newItemName, null, isProductType);       // Mettre à jour le dropdown avec le nouvel élément
+                    await addItem(`/API/${modelName}`, { name: newItemName, UserId: user.id });
+                    await updateDropdown(selectId, modelName, newItemName, { UserId: user.id}, isProductType);       // Mettre à jour le dropdown avec le nouvel élément
 
                 } else {
                     if (!productTypeId) {
@@ -46,8 +50,8 @@ export async function handleAddProduct() {
                         return;
                     }
 
-                    await addItem(`/API/${modelName}`, { name: newItemName, ProductTypeId: productTypeId});
-                    await updateDropdown(selectId, modelName, newItemName, productTypeId, isProductType);       // Mettre à jour le dropdown avec le nouvel élément, en filtrant
+                    await addItem(`/API/${modelName}`, { name: newItemName, ProductTypeId: productTypeId }); // ON AJOUTER EGALEMENT USER.ID MON ON ARETTE pour eviter la redondance. On peut y acceder via son productType
+                    await updateDropdown(selectId, modelName, newItemName, { ProductTypeId: productTypeId}, isProductType);       // Mettre à jour le dropdown avec le nouvel élément, en filtrant
 
                 }
 

@@ -559,3 +559,4 @@ C:\Users\satya\OneDrive\Documents\Formation programation\C#\MyInventory\Inventor
 C:\Users\satya\OneDrive\Documents\Formation programation\C#\MyInventory\InventoryApp\obj\Debug\net8.0\InventoryApp.genruntimeconfig.cache
 C:\Users\satya\OneDrive\Documents\Formation programation\C#\MyInventory\InventoryApp\obj\Debug\net8.0\ref\InventoryApp.dll
 C:\Users\satya\OneDrive\Documents\Formation programation\C#\MyInventory\InventoryApp\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\satya\OneDrive\Documents\Formation programation\C#\MyInventory\InventoryApp\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

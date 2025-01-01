@@ -1,16 +1,20 @@
 ﻿import { getItems } from "../api/GET_getItems.js";
 
-export async function updateDropdown(selectId, modelName, newValue, filltreId = null, isTriggerd = false) {
+export async function updateDropdown(selectId, modelName, newValue, filters = {}, isTriggerd = false) {
 
     // Par default l'url
-    let url = `/API/${modelName}`;
+    let url = `/API/${modelName}/ByFilters`;
 
-    console.log("fillteredId = " + filltreId);
-
-    // Si l'on souhaite filtrer par id
-    if (filltreId != null) {
-        url += `/ByProductType?ProductTypeId=${filltreId}`
+    const queryParams = new URLSearchParams();
+    Object.entries(filters).forEach(([key, value]) => {
+        queryParams.append(key, value);
+    });
+    if (queryParams.toString()) {
+        url += `?${queryParams.toString()}`;
     }
+    console.log(`🔍 URL générée pour fetch : ${url}`);
+
+
     const items = await getItems(url);
 
     const selectTag = document.getElementById(selectId);
@@ -30,7 +34,7 @@ export async function updateDropdown(selectId, modelName, newValue, filltreId = 
 
     // Vérifier si le tableau est vide
     if (items.length === 0) {
-        console.warn('⚠️ Aucun élément trouvé pour le modèle demandé.');
+        console.warn(`⚠️ Aucun élément trouvé pour le modèle "${modelName}" demandé`);
     }
 
     items.forEach(item => {
@@ -54,13 +58,14 @@ export async function updateDropdown(selectId, modelName, newValue, filltreId = 
     selectTag.appendChild(addItemTag);
 }
 
-async function handleNewSection(productTypeId, subContainers) {
+async function handleNewSection(productTypeId, subContainers, userId) {
     console.log('handleNewSection : in the handleNewSection ')
 
+    if (userId == null || userId == undefined) console.log("userId not defiened");
     // Mettre à jour les sélecteurs filtrés par ProductTypeId
     try {
         subContainers.forEach(async (el) => {
-            await updateDropdown(`${el}-select`, el, null, productTypeId);
+            await updateDropdown(`${el}-select`, el, null, { ProductTypeId: productTypeId });
             document.getElementById(`new${el}_container`).dataset.productTypeId = productTypeId; // Stocker le ProductTypeId dans les containers
         })
     } catch (error) {
@@ -69,7 +74,7 @@ async function handleNewSection(productTypeId, subContainers) {
 }
 
 // Handle The input display -> Block or None
-export function handleDropdown(selectId, formContainerId, addOptionValue = 'add-new', isNewSection = false) {
+export function handleDropdown(selectId, formContainerId, addOptionValue = 'add-new', isNewSection = false, userId) {
     const dropDown = document.getElementById(selectId);
     const subContainers = ['Category', 'Supplier'];
 
@@ -92,7 +97,7 @@ export function handleDropdown(selectId, formContainerId, addOptionValue = 'add-
 
         if (isNewSection) {
             if (selectedOption && selectedOption.dataset.trigger === 'true') {
-                handleNewSection(selectedoptionId, subContainers);
+                handleNewSection(selectedoptionId, subContainers, userId);
                 formContainer.style.display = 'block';
 
             } else {
@@ -110,7 +115,8 @@ export function handleDropdown(selectId, formContainerId, addOptionValue = 'add-
 
             }
         }
-    
+
 
     })
 }
+

@@ -28,11 +28,11 @@
                     </ul>
                     <ul class="navbar-nav ms-auto">
                         <!-- Aligne à droite -->
-                        @if (TempData["Connected"] is bool isConnected && isConnected)
+                        @if (ViewData["Connected"] is bool isConnected && isConnected)
                         {
-                            <p>@TempData["Username"]</p>
+                            <p>@ViewData["Username"]</p>
                             <form asp-controller="Account" asp-action="Logout" method="post" style="display:inline;">
-                                <button type="submit" class="btn  text-danger">Logout</button>
+                                <button type="submit" class="btn  text-danger">AAAAAA</button>
                             </form>
 
                         }
@@ -67,7 +67,7 @@
     @* <script type="module" src="~/js/app.js"></script> *@
     <script type="module" src="~/lib/jquery/dist/jquery.min.js"></script>
     <script type="module" src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="~/js/site.js" asp-append-version="true"></script>
+    <script type="module" src="~/js/site.js" asp-append-version="true"></script>git 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

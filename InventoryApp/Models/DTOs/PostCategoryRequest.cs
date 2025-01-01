@@ -14,6 +14,10 @@ namespace InventoryApp.Models.DTOs
         [Required]
         public int? ProductTypeId { get; set; }
 
+        //[Required]
+        //public int? UserId { get; set; }
+
+
 
         public string? Description { get; set; }
 

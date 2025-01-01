@@ -7,5 +7,6 @@ namespace InventoryApp.Models.DTOs
         [JsonPropertyName("name")]
         public string Name { get; set; } = null!;
 
+        public int? UserId { get; set; }
     }
 }

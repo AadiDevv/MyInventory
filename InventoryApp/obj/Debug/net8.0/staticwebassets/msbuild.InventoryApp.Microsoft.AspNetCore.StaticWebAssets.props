@@ -156,8 +156,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>1n0h8cdke5</Fingerprint>
-      <Integrity>g1qUb6wW7WCO8mqeude8gWe94RK6dfeDkG3FLgYEs4E=</Integrity>
+      <Fingerprint>r5gwh0pkyn</Fingerprint>
+      <Integrity>z1qe+nEjGa9Ubt66euYrclhfeQTWtxGdL4faPna4Cfk=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\shared\utils\dropdown.js'))</OriginalItemSpec>
@@ -174,8 +174,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>eg6j68jwcs</Fingerprint>
-      <Integrity>br2eF7g/Rqou0Zw8A2UmTxJtAOk4eQ1zcK4Hr2AQ6Is=</Integrity>
+      <Fingerprint>zaqh1gsts5</Fingerprint>
+      <Integrity>lX8Md/4G65qJdL5UaW/6G1Q0sR7hpdZAvoc3+OzEO+o=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</OriginalItemSpec>
@@ -192,8 +192,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>60k3lg12cb</Fingerprint>
-      <Integrity>+nLlgxYGP7neGVZopZYA2R+VaJ1n5bMvrY9DOz5SN4s=</Integrity>
+      <Fingerprint>p4cn3noug0</Fingerprint>
+      <Integrity>18OIqlrEDSzezdhufvlYrmruoqkHO3cYKDW/8ZjJjBM=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\vues\addProduct.js'))</OriginalItemSpec>
@@ -210,8 +210,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>z9ucisxf10</Fingerprint>
-      <Integrity>uclnxhYakVTip0+iHOn9frEz/QxsFHx5+zqA+AciyAo=</Integrity>
+      <Fingerprint>41xodpxjgq</Fingerprint>
+      <Integrity>yEHPborRXkKfqAEe69ls8qTQQatjc+3WQkIBm51w26A=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\vues\Layout.js'))</OriginalItemSpec>

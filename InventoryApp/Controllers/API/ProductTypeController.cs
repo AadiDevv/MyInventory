@@ -43,6 +43,17 @@ namespace InventoryApp.Controllers_API
             return productType;
         }
 
+        [HttpGet("ByFilters")]
+        public async Task<ActionResult<IEnumerable<ProductType>>> GetProductTypeById([FromQuery] int UserId)
+        {
+            var productTtype = await _context.ProductTypes
+                .Where(c => c.UserId == UserId)
+                .ToListAsync();
+
+            return Ok(productTtype);
+        }
+
+
         // PUT: api/ProductType/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
@@ -82,7 +93,7 @@ namespace InventoryApp.Controllers_API
             try
             {
                 // Check if supplier with same name exists
-                var existingPdtType = await _context.ProductTypes.FirstOrDefaultAsync(c => c.Name.ToLower() == request.Name.ToLower());
+                var existingPdtType = await _context.ProductTypes.FirstOrDefaultAsync(c => c.Name.ToLower() == request.Name.ToLower() && c.UserId == request.UserId);
 
 
                 if (existingPdtType != null)
@@ -95,7 +106,9 @@ namespace InventoryApp.Controllers_API
                 }
 
                 // Add supplier to database
-                var productType = new ProductType { Name = request.Name };
+                var productType = new ProductType { Name = request.Name,
+                    UserId = request.UserId
+                };
                 _context.ProductTypes.Add(productType);
                 await _context.SaveChangesAsync();
 

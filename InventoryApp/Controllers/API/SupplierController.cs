@@ -43,7 +43,7 @@ namespace InventoryApp.Controllers_API
         }
 
         // GET: api/Category?Query
-        [HttpGet("ByProductType")]
+        [HttpGet("ByFilters")]
         public async Task<ActionResult<IEnumerable<Supplier>>> GetSupplierById([FromQuery] int ProductTypeId)
         { Console.WriteLine("Got parametre : " + ProductTypeId);
             var suppliers = await _context.Suppliers
@@ -92,7 +92,7 @@ namespace InventoryApp.Controllers_API
             try
             {
                 // Check if supplier with same name exists
-                var existingSupplier = await _context.Suppliers.FirstOrDefaultAsync(c => c.Name.ToLower() == request.NewSupplierName.ToLower());
+                var existingSupplier = await _context.Suppliers.FirstOrDefaultAsync(c => c.Name.ToLower() == request.NewSupplierName.ToLower() && c.ProductTypeId == request.ProductTypeId);
 
 
                 if (existingSupplier != null)
@@ -107,7 +107,8 @@ namespace InventoryApp.Controllers_API
                 // Add supplier to database
                 var supplier = new Supplier
                 { Name = request.NewSupplierName,
-                  ProductTypeId = request.ProductTypeId
+                  ProductTypeId = request.ProductTypeId,
+
                 };
                 _context.Suppliers.Add(supplier);
                 await _context.SaveChangesAsync();

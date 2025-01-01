@@ -13,7 +13,8 @@ namespace InventoryApp.Models.DTOs
         public string? Reference { get; set; }
 
         public string? Description { get; set; }
-
+        //[Required]
+        //public int? UserId { get; set; }
         [Required]
         public int Quantity { get; set; }
 

@@ -111,7 +111,7 @@
   {
     "ContainingType": "InventoryApp.Controllers_API.CategoryController",
     "Method": "GetCategoriesById",
-    "RelativePath": "api/Category/ByProductType",
+    "RelativePath": "api/Category/ByFilters",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -351,6 +351,32 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InventoryApp.Controllers_API.ProductTypeController",
+    "Method": "GetProductTypeById",
+    "RelativePath": "api/ProductType/ByFilters",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[InventoryApp.Models.ProductType, InventoryApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "InventoryApp.Controllers_API.StockEntryController",
@@ -900,7 +926,7 @@
   {
     "ContainingType": "InventoryApp.Controllers_API.SupplierController",
     "Method": "GetSupplierById",
-    "RelativePath": "api/Supplier/ByProductType",
+    "RelativePath": "api/Supplier/ByFilters",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
