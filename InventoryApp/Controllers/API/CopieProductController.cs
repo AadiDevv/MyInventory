@@ -12,11 +12,11 @@ namespace InventoryApp.Controllers_API
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductController : ControllerBase
+    public class CopieProductController : ControllerBase
     {
         private readonly MyInventoryContext _context;
 
-        public ProductController(MyInventoryContext context)
+        public CopieProductController(MyInventoryContext context)
         {
             _context = context;
         }
@@ -75,21 +75,12 @@ namespace InventoryApp.Controllers_API
 
         // POST: api/Product
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        // POST: api/Product
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Product>> PostProduct(PostProductRequest request)
         {
             try
             {
-                // Ici on part chercher si un pdt correspond deja (Meme frns, nom et category)
-                var existingProduct = await _context.Products
-        .FirstOrDefaultAsync(el =>
-            el.Name.ToLower() == request.NewProductName.ToLower()
-            && el.SupplierId == request.SupplierId
-            && el.CategoryId == request.CategoryId
-            );
-
+                var existingProduct = await _context.Products.FirstOrDefaultAsync(el => el.Name.ToLower() == request.NewProductName.ToLower());
 
                 if (existingProduct != null)
                 {
@@ -104,44 +95,42 @@ namespace InventoryApp.Controllers_API
                     });
 
 
-                }
-                else
+                }else
                 {
-                    var product = new Product
-                    {
-                        Name = request.NewProductName,
-                        Reference = request.Reference,
-                        Quantity = request.Quantity, // Ajoutez la quantité initiale
-                        CategoryId = request.CategoryId,
-                        SupplierId = request.SupplierId,
-                        PricePurchase = request.PricePurchase,
-                        PriceSale = request.PriceSale,
-                        Description = request.Description,
-
-                    };
-
-                    _context.Products.Add(product);
-                    await _context.SaveChangesAsync();
-
-                    var category = await _context.Categories.FindAsync(product.CategoryId);
-                    if (category != null)
-                    {
-                        category.ProductCount = await _context.Products.CountAsync(p => p.CategoryId == product.CategoryId);
-                        await _context.SaveChangesAsync();
-                    }
-
                     return Ok(new
                     {
                         success = true,
-                        message = "Product created successfully.",
+                        message = "Product quantity updated.",
                         data = existingProduct
                     });
                 }
-          
+
+                //var product = new Product
+                //{
+                //    Name = request.NewProductName,
+                //    Quantity = request.Quantity, // Ajoutez la quantité initiale
+                //    CategoryId = request.CategoryId,
+                //    SupplierId = request.SupplierId,
+                //    Description = request.Description
+
+                //};
+
+                //_context.Products.Add(product);
+                //await _context.SaveChangesAsync();
+
+                //var category = _context.Categories.FindAsync(product.CategoryId);
+                //category.ProductCount = await _context.Products.CountAsync(p => p.CategoryId == product.CategoryId);
+                //await _.SaveChangesAsync();
+
+                //return CreatedAtAction("GetCategory", new { id = product.Id }, new
+                //{
+                //    success = true,
+                //    message = "Product created successfully.",
+                //    data = product
+                //});
             }
             catch (Exception ex)
             {
-                Response.ContentType = "application/json";
                 return StatusCode(500, new
                 {
                     success = false,
@@ -150,7 +139,7 @@ namespace InventoryApp.Controllers_API
                     stackTrace = ex.StackTrace
                 });
             }
-
+            
 
         }
 

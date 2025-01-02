@@ -49,6 +49,9 @@ export async function updateDropdown(selectId, modelName, newValue, filters = {}
             console.log('[updateDropdown]' + `new vale (${newValue}) ; name (${item.name})`);
 
             option.selected = true;
+            const event = new Event('change', { bubbles: true });
+            selectTag.parentElement.dispatchEvent(event);
+
         }
         selectTag.appendChild(option);
     })

@@ -13,8 +13,6 @@ public partial class Category
 
     public int? ProductCount { get; set; }
 
-    public int? UserId { get; set; }
-
     public int? ProductTypeId { get; set; }
 
     public int? DistinctProductCount { get; set; }
@@ -23,9 +21,9 @@ public partial class Category
 
     public decimal? TotalValue { get; set; }
 
+    public DateTime CreatedAt { get; set; }
+
     public virtual ProductType? ProductType { get; set; }
 
     public virtual ICollection<Product> Products { get; set; } = new List<Product>();
-
-    public virtual User? User { get; set; }
 }

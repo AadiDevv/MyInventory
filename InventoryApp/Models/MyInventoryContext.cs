@@ -43,6 +43,9 @@ public partial class MyInventoryContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK__Categori__3214EC07962434F4");
 
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
             entity.Property(e => e.DistinctProductCount).HasDefaultValue(0);
             entity.Property(e => e.Name).HasMaxLength(250);
             entity.Property(e => e.ProductCount).HasDefaultValue(0);
@@ -54,10 +57,6 @@ public partial class MyInventoryContext : DbContext
             entity.HasOne(d => d.ProductType).WithMany(p => p.Categories)
                 .HasForeignKey(d => d.ProductTypeId)
                 .HasConstraintName("FK_Categories_ProductType");
-
-            entity.HasOne(d => d.User).WithMany(p => p.Categories)
-                .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK_Categories_UserId");
         });
 
         modelBuilder.Entity<Product>(entity =>
@@ -65,6 +64,9 @@ public partial class MyInventoryContext : DbContext
             entity.HasKey(e => e.Id).HasName("PK__Products__3214EC07F6A6E60B");
 
             entity.Property(e => e.Color).HasMaxLength(50);
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
             entity.Property(e => e.Name).HasMaxLength(50);
             entity.Property(e => e.PricePurchase).HasColumnType("decimal(18, 2)");
             entity.Property(e => e.PriceSale).HasColumnType("decimal(18, 2)");
@@ -77,27 +79,20 @@ public partial class MyInventoryContext : DbContext
                 .HasForeignKey(d => d.CategoryId)
                 .HasConstraintName("FK__Products__Catego__412EB0B6");
 
-            entity.HasOne(d => d.ProductType).WithMany(p => p.Products)
-                .HasForeignKey(d => d.ProductTypeId)
-                .HasConstraintName("FK_Product_ProductType");
-
             entity.HasOne(d => d.Supplier).WithMany(p => p.Products)
                 .HasForeignKey(d => d.SupplierId)
                 .HasConstraintName("FK__Products__Suppli__4222D4EF");
-
-            entity.HasOne(d => d.User).WithMany(p => p.Products)
-                .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK_Products_UserId");
         });
 
         modelBuilder.Entity<ProductType>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__ProductT__3214EC07EB8B96EA");
 
-            entity.ToTable("ProductType");
-
             entity.HasIndex(e => e.UserId, "IX_ProductType_UserId");
 
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
             entity.Property(e => e.DistinctProductCount).HasDefaultValue(0);
             entity.Property(e => e.Name).HasMaxLength(100);
             entity.Property(e => e.TotalQuantity).HasDefaultValue(0);
@@ -114,8 +109,9 @@ public partial class MyInventoryContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK__StockEnt__3214EC07322A570C");
 
-            entity.ToTable("StockEntry");
-
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
             entity.Property(e => e.EntryDate).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.Status)
                 .HasMaxLength(20)
@@ -134,8 +130,9 @@ public partial class MyInventoryContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK__StockEnt__3214EC0726699BD7");
 
-            entity.ToTable("StockEntryItem");
-
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
             entity.Property(e => e.Price).HasColumnType("decimal(10, 2)");
 
             entity.HasOne(d => d.Product).WithMany(p => p.StockEntryItems)
@@ -151,8 +148,9 @@ public partial class MyInventoryContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK__StockOut__3214EC0769F7A742");
 
-            entity.ToTable("StockOut");
-
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
             entity.Property(e => e.Timestamp).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.Type).HasMaxLength(10);
         });
@@ -161,8 +159,9 @@ public partial class MyInventoryContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK__StockOut__3214EC0760B6D512");
 
-            entity.ToTable("StockOutItem");
-
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
             entity.Property(e => e.Price).HasColumnType("decimal(10, 2)");
 
             entity.HasOne(d => d.Product).WithMany(p => p.StockOutItems)
@@ -179,6 +178,9 @@ public partial class MyInventoryContext : DbContext
             entity.HasKey(e => e.Id).HasName("PK__Supplier__3214EC077F92AD6E");
 
             entity.Property(e => e.ContactName).HasMaxLength(100);
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
             entity.Property(e => e.Email).HasMaxLength(100);
             entity.Property(e => e.Name).HasMaxLength(250);
             entity.Property(e => e.Phone).HasMaxLength(15);
@@ -186,16 +188,15 @@ public partial class MyInventoryContext : DbContext
             entity.HasOne(d => d.ProductType).WithMany(p => p.Suppliers)
                 .HasForeignKey(d => d.ProductTypeId)
                 .HasConstraintName("FK_Supplier_ProductType");
-
-            entity.HasOne(d => d.User).WithMany(p => p.Suppliers)
-                .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK_Suppliers_UserId");
         });
 
         modelBuilder.Entity<User>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Users_Te__3214EC07D61330EF");
 
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
             entity.Property(e => e.Email).HasMaxLength(100);
             entity.Property(e => e.Password).HasMaxLength(256);
             entity.Property(e => e.Username).HasMaxLength(50);

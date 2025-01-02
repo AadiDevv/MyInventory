@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Dashboard - Aperçu des Types de Produits";
+    // Simulation de données statiques pour tester le design
+    @model List<InventoryApp.Models.DTOs.StatistiquesDTO>
+    // var productTypes = ViewData["ProductTypes"] as List<dynamic>; Exemple temporaire
+    // var productTypes = new List<dynamic>
+    // {
+    //     new { Id = 1, Name = "Tech", TypeCount = 5, TotalQuantity = 120, InStock = 100, TotalValue = 10000 },
+    //     new { Id = 2, Name = "Alimentation", TypeCount = 3, TotalQuantity = 75, InStock = 50, TotalValue = 2500 },
+    //     new { Id = 3, Name = "Vêtements", TypeCount = 4, TotalQuantity = 200, InStock = 180, TotalValue = 8000 },
+    //     new { Id = 4, Name = "Électroménager", TypeCount = 2, TotalQuantity = 45, InStock = 30, TotalValue = 5000 }
+    // };
+
+    // if (productTypes == null)
+    // {
+    //     <p class="text-danger">⚠️ Aucune donnée disponible pour les types de produits.</p>
+    // }
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4 text-center">Dashboard - Aperçu des Types de Produits</h1>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+            @foreach (var productType in Model)
+            {
+            <div class="col">
+                <div class="card shadow-sm">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">@productType.Name</h5>
+                        <div>
+                            <!-- Bouton Modifier -->
+                            <a href="/ProductType/Edit/@productType.Id" class="btn btn-sm btn-outline-primary me-1" title="Modifier">
+                                <i class="bi bi-pencil"></i>
+                            </a>
+                            <!-- Bouton Supprimer -->
+                            <form asp-controller="ProductType" asp-action="Delete" method="post" style="display:inline;">
+                                <input type="hidden" name="Id" value="@productType.Id" />
+                                <button type="submit" class="btn btn-sm btn-outline-danger" title="Supprimer" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce type de produit ?');">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Nombre de Types :</strong> @productType.TypeCount</p>
+                        <p><strong>Quantité Totale :</strong> @productType.TotalQuantity</p>
+                        <p><strong>En Stock :</strong> @productType.InStock</p>
+                        <p><strong>Dernière Mise à Jour :</strong> @(productType.LastUpdate?.ToString("dd/MM/yyyy") ?? "N/A")</p>
+                        <p><strong>Valeur Totale :</strong> @productType.TotalValue €</p>
+                    </div>
+                    <div class="card-footer text-center bg-light">
+                        <a href="/Category/ByProductType/@productType.Id" class="btn btn-sm btn-primary">Voir les Catégories</a>
+                    </div>
+                </div>
+            </div>
+            }
+        
+       
+    </div>
+</div>

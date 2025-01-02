@@ -9,14 +9,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
 
-    let user = JSON.parse(localStorage.getItem('currentUser'));
+    //let user = JSON.parse(localStorage.getItem('currentUser'));
 
-    if (!user) {
-        user = await getCurrentUser();
-        if (user) {
-            localStorage.setItem('currentUser', JSON.stringify(user));
-        }
-    }
+    //if (!user) {
+       let user = await getCurrentUser();
+    //    if (user) {
+    //        localStorage.setItem('currentUser', JSON.stringify(user));
+    //    }
+    //}
 
     const productTypeEl = document.getElementById('ProductType-select');
     if (productTypeEl) {

@@ -8,6 +8,7 @@ wwwroot\js\shared\utils\alert.js
 wwwroot\js\shared\utils\dropdown.js
 wwwroot\js\site.js
 wwwroot\js\vues\addProduct.js
+wwwroot\js\vues\Dashboard.js
 wwwroot\js\vues\Layout.js
 wwwroot\js\vues\register.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css

@@ -15,6 +15,8 @@ public partial class StockEntry
 
     public int? UserId { get; set; }
 
+    public DateTime CreatedAt { get; set; }
+
     public virtual ICollection<StockEntryItem> StockEntryItems { get; set; } = new List<StockEntryItem>();
 
     public virtual Supplier? Supplier { get; set; }

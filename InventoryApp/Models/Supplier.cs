@@ -17,15 +17,13 @@ public partial class Supplier
 
     public string? Address { get; set; }
 
-    public int? UserId { get; set; }
-
     public int? ProductTypeId { get; set; }
+
+    public DateTime CreatedAt { get; set; }
 
     public virtual ProductType? ProductType { get; set; }
 
     public virtual ICollection<Product> Products { get; set; } = new List<Product>();
 
     public virtual ICollection<StockEntry> StockEntries { get; set; } = new List<StockEntry>();
-
-    public virtual User? User { get; set; }
 }

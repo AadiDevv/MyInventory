@@ -15,5 +15,7 @@ public partial class StockOut
 
     public int? UserId { get; set; }
 
+    public DateTime CreatedAt { get; set; }
+
     public virtual ICollection<StockOutItem> StockOutItems { get; set; } = new List<StockOutItem>();
 }

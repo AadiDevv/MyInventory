@@ -41,6 +41,10 @@
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
+      "Id": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\vues\\Dashboard.js",
+      "PackagePath": "staticwebassets\\js\\vues\\Dashboard.js"
+    },
+    {
       "Id": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\vues\\Layout.js",
       "PackagePath": "staticwebassets\\js\\vues\\Layout.js"
     },

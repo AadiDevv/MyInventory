@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Dashboard - Catégories d'un Type de Produit";
+    var categories = new List<dynamic>
+    {
+        new { Id = 1, Name = "Ordinateurs", ProductCount = 10, TotalQuantity = 50, InStock = 40 },
+        new { Id = 2, Name = "Téléphones", ProductCount = 8, TotalQuantity = 80, InStock = 70 },
+        new { Id = 3, Name = "Tablettes", ProductCount = 5, TotalQuantity = 30, InStock = 25 }
+    };
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4 text-center">Catégories pour le Type de Produit : Tech</h1>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach (var category in categories)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title">@category.Name</h5>
+                        <p class="card-text">
+                            <strong>Nombre de Produits :</strong> @category.ProductCount<br>
+                            <strong>Quantité Totale :</strong> @category.TotalQuantity<br>
+                            <strong>En Stock :</strong> @category.InStock
+                        </p>
+                    </div>
+                    <div class="card-footer text-center bg-light">
+                        <a href="/Dashboard/Products?CategoryId=@category.Id" class="btn btn-primary">
+                            Voir les Produits
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

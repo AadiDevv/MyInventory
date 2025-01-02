@@ -21,14 +21,7 @@ namespace InventoryApp.Controllers
         {
             return View();
         }
-        //public IActionResult Dashboard()
-        //{
-        //    var viewModel = new DashboardViewModel
-        //    {
-
-        //    }
-        //    return View();
-        //}
+       
         public IActionResult AddProduct()
         {
             var categories = _context.Products.Select(el => new SelectListItem

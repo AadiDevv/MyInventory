@@ -25,28 +25,31 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AddProduct">Add Product</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Dashboard" asp-action="ProductTypeView">Dashboard</a>
+                        </li>
                     </ul>
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Aligne à droite -->
+                    <ul class="navbar-nav ms-auto align-items-center">
                         @if (ViewData["Connected"] is bool isConnected && isConnected)
                         {
-                            <p>@ViewData["Username"]</p>
-                            <form asp-controller="Account" asp-action="Logout" method="post" style="display:inline;">
-                                <button type="submit" class="btn  text-danger">AAAAAA</button>
-                            </form>
-
+                            <li class="nav-item me-2">
+                                <span class="navbar-text fw-semibold">@ViewData["Username"]</span>
+                            </li>
+                            <li class="nav-item">
+                                <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-outline-danger btn-sm">Logout</button>
+                                </form>
+                            </li>
                         }
                         else
                         {
-                            <li class="nav-item">
-                                <a class="nav-link btn btn-outline-primary me-2" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                            <li class="nav-item me-2">
+                                <a class="nav-link btn btn-outline-primary btn-sm" asp-controller="Account" asp-action="Login">Login</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link btn btn-primary text-light" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
+                                <a class="nav-link btn btn-primary btn-sm text-light" asp-controller="Account" asp-action="Register">Register</a>
                             </li>
                         }
-
-                      
                     </ul>
                 </div>
             </div>
@@ -67,7 +70,7 @@
     @* <script type="module" src="~/js/app.js"></script> *@
     <script type="module" src="~/lib/jquery/dist/jquery.min.js"></script>
     <script type="module" src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="~/js/site.js" asp-append-version="true"></script>git 
+    <script type="module" src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

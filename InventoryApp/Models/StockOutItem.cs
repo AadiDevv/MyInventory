@@ -15,6 +15,8 @@ public partial class StockOutItem
 
     public int? ProductId { get; set; }
 
+    public DateTime CreatedAt { get; set; }
+
     public virtual Product? Product { get; set; }
 
     public virtual StockOut? StockOut { get; set; }

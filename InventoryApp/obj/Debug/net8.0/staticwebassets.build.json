@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "P/uD1+tQ8Z2xySG+5RP+pFhxkTxRtkyrQcuI/8I6wQo=",
+  "Hash": "/osWPRdzjdpzijlgDx2TrQhmeeVpsOdzUKx95Jug01U=",
   "Source": "InventoryApp",
   "BasePath": "_content/InventoryApp",
   "Mode": "Default",
@@ -220,8 +220,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "r5gwh0pkyn",
-      "Integrity": "z1qe+nEjGa9Ubt66euYrclhfeQTWtxGdL4faPna4Cfk=",
+      "Fingerprint": "3wac1cj58n",
+      "Integrity": "3XykwURZ15b3k1QRRNVEFvun23vIJbL9S37VluoBTUs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\shared\\utils\\dropdown.js"
@@ -241,8 +241,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "zaqh1gsts5",
-      "Integrity": "lX8Md/4G65qJdL5UaW/6G1Q0sR7hpdZAvoc3+OzEO+o=",
+      "Fingerprint": "me9ei6ks7o",
+      "Integrity": "4m6FDN+iu/+fh61ElVOay3UfWuT97oof5TuuwewP/IQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
@@ -267,6 +267,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\vues\\addProduct.js"
+    },
+    {
+      "Identity": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\vues\\Dashboard.js",
+      "SourceId": "InventoryApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\",
+      "BasePath": "_content/InventoryApp",
+      "RelativePath": "js/vues/Dashboard#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "eawhmy9s3l",
+      "Integrity": "tuvnMO6SoOxNYj32V+MBjnOV5INWV9QR2sh9mFu00Is=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\vues\\Dashboard.js"
     },
     {
       "Identity": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\vues\\Layout.js",
@@ -2248,6 +2269,51 @@
       ]
     },
     {
+      "Route": "js/shared/utils/dropdown.3wac1cj58n.js",
+      "AssetFile": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\shared\\utils\\dropdown.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4387"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3XykwURZ15b3k1QRRNVEFvun23vIJbL9S37VluoBTUs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 01 Jan 2025 17:55:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3wac1cj58n"
+        },
+        {
+          "Name": "label",
+          "Value": "js/shared/utils/dropdown.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3XykwURZ15b3k1QRRNVEFvun23vIJbL9S37VluoBTUs="
+        }
+      ]
+    },
+    {
       "Route": "js/shared/utils/dropdown.js",
       "AssetFile": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\shared\\utils\\dropdown.js",
       "Selectors": [],
@@ -2258,7 +2324,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4259"
+          "Value": "4387"
         },
         {
           "Name": "Content-Type",
@@ -2266,11 +2332,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"z1qe+nEjGa9Ubt66euYrclhfeQTWtxGdL4faPna4Cfk=\""
+          "Value": "\"3XykwURZ15b3k1QRRNVEFvun23vIJbL9S37VluoBTUs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 10:35:42 GMT"
+          "Value": "Wed, 01 Jan 2025 17:55:14 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2280,52 +2346,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-z1qe+nEjGa9Ubt66euYrclhfeQTWtxGdL4faPna4Cfk="
-        }
-      ]
-    },
-    {
-      "Route": "js/shared/utils/dropdown.r5gwh0pkyn.js",
-      "AssetFile": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\shared\\utils\\dropdown.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4259"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"z1qe+nEjGa9Ubt66euYrclhfeQTWtxGdL4faPna4Cfk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 10:35:42 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "r5gwh0pkyn"
-        },
-        {
-          "Name": "label",
-          "Value": "js/shared/utils/dropdown.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-z1qe+nEjGa9Ubt66euYrclhfeQTWtxGdL4faPna4Cfk="
+          "Value": "sha256-3XykwURZ15b3k1QRRNVEFvun23vIJbL9S37VluoBTUs="
         }
       ]
     },
@@ -2340,7 +2361,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1274"
+          "Value": "1289"
         },
         {
           "Name": "Content-Type",
@@ -2348,11 +2369,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"lX8Md/4G65qJdL5UaW/6G1Q0sR7hpdZAvoc3+OzEO+o=\""
+          "Value": "\"4m6FDN+iu/+fh61ElVOay3UfWuT97oof5TuuwewP/IQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 10:15:07 GMT"
+          "Value": "Wed, 01 Jan 2025 18:09:12 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2362,12 +2383,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-lX8Md/4G65qJdL5UaW/6G1Q0sR7hpdZAvoc3+OzEO+o="
+          "Value": "sha256-4m6FDN+iu/+fh61ElVOay3UfWuT97oof5TuuwewP/IQ="
         }
       ]
     },
     {
-      "Route": "js/site.zaqh1gsts5.js",
+      "Route": "js/site.me9ei6ks7o.js",
       "AssetFile": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\site.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2377,7 +2398,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1274"
+          "Value": "1289"
         },
         {
           "Name": "Content-Type",
@@ -2385,11 +2406,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"lX8Md/4G65qJdL5UaW/6G1Q0sR7hpdZAvoc3+OzEO+o=\""
+          "Value": "\"4m6FDN+iu/+fh61ElVOay3UfWuT97oof5TuuwewP/IQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 10:15:07 GMT"
+          "Value": "Wed, 01 Jan 2025 18:09:12 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2399,7 +2420,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "zaqh1gsts5"
+          "Value": "me9ei6ks7o"
         },
         {
           "Name": "label",
@@ -2407,7 +2428,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-lX8Md/4G65qJdL5UaW/6G1Q0sR7hpdZAvoc3+OzEO+o="
+          "Value": "sha256-4m6FDN+iu/+fh61ElVOay3UfWuT97oof5TuuwewP/IQ="
         }
       ]
     },
@@ -2490,6 +2511,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-18OIqlrEDSzezdhufvlYrmruoqkHO3cYKDW/8ZjJjBM="
+        }
+      ]
+    },
+    {
+      "Route": "js/vues/Dashboard.eawhmy9s3l.js",
+      "AssetFile": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\vues\\Dashboard.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "69"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tuvnMO6SoOxNYj32V+MBjnOV5INWV9QR2sh9mFu00Is=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 01 Jan 2025 17:30:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "eawhmy9s3l"
+        },
+        {
+          "Name": "label",
+          "Value": "js/vues/Dashboard.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tuvnMO6SoOxNYj32V+MBjnOV5INWV9QR2sh9mFu00Is="
+        }
+      ]
+    },
+    {
+      "Route": "js/vues/Dashboard.js",
+      "AssetFile": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\vues\\Dashboard.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "69"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tuvnMO6SoOxNYj32V+MBjnOV5INWV9QR2sh9mFu00Is=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 01 Jan 2025 17:30:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tuvnMO6SoOxNYj32V+MBjnOV5INWV9QR2sh9mFu00Is="
         }
       ]
     },

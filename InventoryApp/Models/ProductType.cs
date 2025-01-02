@@ -17,9 +17,9 @@ public partial class ProductType
 
     public int? UserId { get; set; }
 
-    public virtual ICollection<Category> Categories { get; set; } = new List<Category>();
+    public DateTime CreatedAt { get; set; }
 
-    public virtual ICollection<Product> Products { get; set; } = new List<Product>();
+    public virtual ICollection<Category> Categories { get; set; } = new List<Category>();
 
     public virtual ICollection<Supplier> Suppliers { get; set; } = new List<Supplier>();
 
