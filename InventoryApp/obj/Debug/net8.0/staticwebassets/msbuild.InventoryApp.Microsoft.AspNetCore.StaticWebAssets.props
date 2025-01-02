@@ -54,6 +54,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\InventoryApp.6m2u35f6mv.bundle.scp.css'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\shared\api\DELETE_ittem.js'))">
+      <SourceType>Package</SourceType>
+      <SourceId>InventoryApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/InventoryApp</BasePath>
+      <RelativePath>js/shared/api/DELETE_ittem.js</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>vyl1ipp2jn</Fingerprint>
+      <Integrity>iXSzz36s59qua02n3qfY5hc8KQGwjUKIlMXeYn9+ygk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\shared\api\DELETE_ittem.js'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\shared\api\GET_account.js'))">
       <SourceType>Package</SourceType>
       <SourceId>InventoryApp</SourceId>
@@ -174,8 +192,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>me9ei6ks7o</Fingerprint>
-      <Integrity>4m6FDN+iu/+fh61ElVOay3UfWuT97oof5TuuwewP/IQ=</Integrity>
+      <Fingerprint>l4pxlvzzrf</Fingerprint>
+      <Integrity>iwErPOnS8v+ND2BOSueNCsuvyW1NYIga4x2VydWRYjM=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</OriginalItemSpec>
@@ -210,8 +228,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>eawhmy9s3l</Fingerprint>
-      <Integrity>tuvnMO6SoOxNYj32V+MBjnOV5INWV9QR2sh9mFu00Is=</Integrity>
+      <Fingerprint>gvnaoxs9m1</Fingerprint>
+      <Integrity>XNON4yCSVPcb6qnxQ8LiTmkh3QB4WBw69EvdBQFxNm8=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\vues\Dashboard.js'))</OriginalItemSpec>

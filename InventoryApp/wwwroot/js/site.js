@@ -3,6 +3,7 @@ import { getCurrentUser } from "./shared/api/GET_account.js";
 
 import { handleAddProduct } from "./vues/addProduct.js";
 import { submitForm } from "./shared/api/POST_form.js";
+import { handleDashboard } from "./vues/Dashboard.js"
 
 document.addEventListener('DOMContentLoaded', async () => {
     console.log("hello");
@@ -41,4 +42,5 @@ document.addEventListener('DOMContentLoaded', async () => {
     )
 
     handleAddProduct();
+    await handleDashboard()
 });

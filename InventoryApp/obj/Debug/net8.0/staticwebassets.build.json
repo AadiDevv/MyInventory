@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/osWPRdzjdpzijlgDx2TrQhmeeVpsOdzUKx95Jug01U=",
+  "Hash": "QpPuuZnt3orbB5JLOGRRMmZ50lZPR3r9bfqEXlOVuoU=",
   "Source": "InventoryApp",
   "BasePath": "_content/InventoryApp",
   "Mode": "Default",
@@ -99,6 +99,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\shared\\api\\DELETE_ittem.js",
+      "SourceId": "InventoryApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\",
+      "BasePath": "_content/InventoryApp",
+      "RelativePath": "js/shared/api/DELETE_ittem#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vyl1ipp2jn",
+      "Integrity": "iXSzz36s59qua02n3qfY5hc8KQGwjUKIlMXeYn9+ygk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\shared\\api\\DELETE_ittem.js"
     },
     {
       "Identity": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\shared\\api\\GET_account.js",
@@ -241,8 +262,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "me9ei6ks7o",
-      "Integrity": "4m6FDN+iu/+fh61ElVOay3UfWuT97oof5TuuwewP/IQ=",
+      "Fingerprint": "l4pxlvzzrf",
+      "Integrity": "iwErPOnS8v+ND2BOSueNCsuvyW1NYIga4x2VydWRYjM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
@@ -283,8 +304,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "eawhmy9s3l",
-      "Integrity": "tuvnMO6SoOxNYj32V+MBjnOV5INWV9QR2sh9mFu00Is=",
+      "Fingerprint": "gvnaoxs9m1",
+      "Integrity": "XNON4yCSVPcb6qnxQ8LiTmkh3QB4WBw69EvdBQFxNm8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\vues\\Dashboard.js"
@@ -1859,6 +1880,88 @@
       ]
     },
     {
+      "Route": "js/shared/api/DELETE_ittem.js",
+      "AssetFile": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\shared\\api\\DELETE_ittem.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "962"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iXSzz36s59qua02n3qfY5hc8KQGwjUKIlMXeYn9+ygk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 02 Jan 2025 11:04:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-iXSzz36s59qua02n3qfY5hc8KQGwjUKIlMXeYn9+ygk="
+        }
+      ]
+    },
+    {
+      "Route": "js/shared/api/DELETE_ittem.vyl1ipp2jn.js",
+      "AssetFile": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\shared\\api\\DELETE_ittem.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "962"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iXSzz36s59qua02n3qfY5hc8KQGwjUKIlMXeYn9+ygk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 02 Jan 2025 11:04:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vyl1ipp2jn"
+        },
+        {
+          "Name": "label",
+          "Value": "js/shared/api/DELETE_ittem.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-iXSzz36s59qua02n3qfY5hc8KQGwjUKIlMXeYn9+ygk="
+        }
+      ]
+    },
+    {
       "Route": "js/shared/api/GET_account.js",
       "AssetFile": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\shared\\api\\GET_account.js",
       "Selectors": [],
@@ -2361,7 +2464,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1289"
+          "Value": "1373"
         },
         {
           "Name": "Content-Type",
@@ -2369,11 +2472,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"4m6FDN+iu/+fh61ElVOay3UfWuT97oof5TuuwewP/IQ=\""
+          "Value": "\"iwErPOnS8v+ND2BOSueNCsuvyW1NYIga4x2VydWRYjM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 18:09:12 GMT"
+          "Value": "Thu, 02 Jan 2025 11:01:14 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2383,12 +2486,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-4m6FDN+iu/+fh61ElVOay3UfWuT97oof5TuuwewP/IQ="
+          "Value": "sha256-iwErPOnS8v+ND2BOSueNCsuvyW1NYIga4x2VydWRYjM="
         }
       ]
     },
     {
-      "Route": "js/site.me9ei6ks7o.js",
+      "Route": "js/site.l4pxlvzzrf.js",
       "AssetFile": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\site.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2398,7 +2501,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1289"
+          "Value": "1373"
         },
         {
           "Name": "Content-Type",
@@ -2406,11 +2509,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"4m6FDN+iu/+fh61ElVOay3UfWuT97oof5TuuwewP/IQ=\""
+          "Value": "\"iwErPOnS8v+ND2BOSueNCsuvyW1NYIga4x2VydWRYjM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 18:09:12 GMT"
+          "Value": "Thu, 02 Jan 2025 11:01:14 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2420,7 +2523,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "me9ei6ks7o"
+          "Value": "l4pxlvzzrf"
         },
         {
           "Name": "label",
@@ -2428,7 +2531,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-4m6FDN+iu/+fh61ElVOay3UfWuT97oof5TuuwewP/IQ="
+          "Value": "sha256-iwErPOnS8v+ND2BOSueNCsuvyW1NYIga4x2VydWRYjM="
         }
       ]
     },
@@ -2515,7 +2618,7 @@
       ]
     },
     {
-      "Route": "js/vues/Dashboard.eawhmy9s3l.js",
+      "Route": "js/vues/Dashboard.gvnaoxs9m1.js",
       "AssetFile": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\vues\\Dashboard.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2525,7 +2628,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "69"
+          "Value": "801"
         },
         {
           "Name": "Content-Type",
@@ -2533,11 +2636,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"tuvnMO6SoOxNYj32V+MBjnOV5INWV9QR2sh9mFu00Is=\""
+          "Value": "\"XNON4yCSVPcb6qnxQ8LiTmkh3QB4WBw69EvdBQFxNm8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 17:30:31 GMT"
+          "Value": "Thu, 02 Jan 2025 11:07:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2547,7 +2650,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "eawhmy9s3l"
+          "Value": "gvnaoxs9m1"
         },
         {
           "Name": "label",
@@ -2555,7 +2658,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-tuvnMO6SoOxNYj32V+MBjnOV5INWV9QR2sh9mFu00Is="
+          "Value": "sha256-XNON4yCSVPcb6qnxQ8LiTmkh3QB4WBw69EvdBQFxNm8="
         }
       ]
     },
@@ -2570,7 +2673,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "69"
+          "Value": "801"
         },
         {
           "Name": "Content-Type",
@@ -2578,11 +2681,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"tuvnMO6SoOxNYj32V+MBjnOV5INWV9QR2sh9mFu00Is=\""
+          "Value": "\"XNON4yCSVPcb6qnxQ8LiTmkh3QB4WBw69EvdBQFxNm8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 17:30:31 GMT"
+          "Value": "Thu, 02 Jan 2025 11:07:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2592,7 +2695,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-tuvnMO6SoOxNYj32V+MBjnOV5INWV9QR2sh9mFu00Is="
+          "Value": "sha256-XNON4yCSVPcb6qnxQ8LiTmkh3QB4WBw69EvdBQFxNm8="
         }
       ]
     },

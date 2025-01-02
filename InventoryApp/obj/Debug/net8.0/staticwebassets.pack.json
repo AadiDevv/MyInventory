@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\shared\\api\\DELETE_ittem.js",
+      "PackagePath": "staticwebassets\\js\\shared\\api\\DELETE_ittem.js"
+    },
+    {
       "Id": "C:\\Users\\satya\\OneDrive\\Documents\\Formation programation\\C#\\MyInventory\\InventoryApp\\wwwroot\\js\\shared\\api\\GET_account.js",
       "PackagePath": "staticwebassets\\js\\shared\\api\\GET_account.js"
     },
